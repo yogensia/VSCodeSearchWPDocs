@@ -7,31 +7,31 @@ import * as vscode from 'vscode';
 // Your extension is activated the very first time the command is executed.
 export function activate(context: vscode.ExtensionContext) {
   /**
-   * Search the Code Reference site for WordPress functions, hooks, etc.
+   * Search in the WordPress Codex/Code Reference.
    */
   let searchWpDocs = new SearchWPDocs();
-  let searchCodeRefDisposable = vscode.commands.registerCommand(
-    'extension.searchCodeRef',
+  let searchCodexDisposable = vscode.commands.registerCommand(
+    "extension.searchCodex",
     () => {
-      searchWpDocs.searchWPDocs('codeRef');
-    }
+      searchWpDocs.searchWPDocs("codex");
+    },
   );
 
   /**
-   * Search the Codex site for WordPress functions, hooks, etc.
+   * Search in QueryPosts.com.
    */
-  let searchCodexDisposable = vscode.commands.registerCommand(
-		'extension.searchCodex',
-		() => {
-			searchWpDocs.searchWPDocs('codex');
-		}
-	);
+  let searchQueryPostsDisposable = vscode.commands.registerCommand(
+    "extension.searchQueryPosts",
+    () => {
+      searchWpDocs.searchWPDocs("queryposts");
+    },
+  );
 
   /**
    * Dispose.
    */
   context.subscriptions.push(searchCodexDisposable);
-  context.subscriptions.push(searchCodeRefDisposable);
+  context.subscriptions.push(searchQueryPostsDisposable);
   context.subscriptions.push(searchWpDocs);
 }
 
@@ -53,15 +53,15 @@ class SearchWPDocs {
 
     // Codex or Developer Reference site?
     let site;
-    if ('codeRef' === docSite) {
-      site = 'developer.wordpress.org';
+    if ("codex" === docSite) {
+      site = "https://codex.wordpress.org/";
     } else {
-      site = 'codex.wordpress.org';
+      site = "https://queryposts.com/function/";
     }
 
     let selection = editor.selection;
     let text = editor.document.getText(selection);
-    let url = 'https://google.com/search?q=' + text + ' url:' + site + '&btnI';
+    let url = site + text + '/';
 
     vscode.commands.executeCommand('vscode.open', vscode.Uri.parse( url ));
   }

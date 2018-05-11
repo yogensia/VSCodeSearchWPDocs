@@ -25,30 +25,30 @@
         "email": "yogensia@gmail.com"
     },
     "activationEvents": [
-        "onCommand:extension.searchCodeRef",
-        "onCommand:extension.searchCodex"
+        "onCommand:extension.searchCodex",
+        "onCommand:extension.searchQueryPosts"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.searchCodeRef",
-                "title": "Search in WordPress Code Reference..."
+                "command": "extension.searchCodex",
+                "title": "Search in WordPress Codex/Dev Reference..."
             },
             {
-                "command": "extension.searchCodex",
-                "title": "Search in WordPress Codex..."
+                "command": "extension.searchQueryPosts",
+                "title": "Search in Queryposts.com..."
             }
         ],
         "menus": {
             "editor/context": [
                 {
-                    "command": "extension.searchCodeRef",
+                    "command": "extension.searchCodex",
                     "when": "editorHasSelection && editorLangId == php",
                     "group": "4_search"
                 },
                 {
-                    "command": "extension.searchCodex",
+                    "command": "extension.searchQueryPosts",
                     "when": "editorHasSelection && editorLangId == php",
                     "group": "4_search"
                 }
@@ -56,13 +56,13 @@
         },
         "keybindings": [
             {
-                "command": "extension.searchCodeRef",
+                "command": "extension.searchCodex",
                 "key": "ctrl+alt+f",
                 "mac": "cmd+alt+f",
                 "when": "editorHasSelection && editorLangId == php"
             },
             {
-                "command": "extension.searchCodex",
+                "command": "extension.searchQueryPosts",
                 "key": "ctrl+alt+g",
                 "mac": "cmd+alt+g",
                 "when": "editorHasSelection && editorLangId == php"
