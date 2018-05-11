@@ -1,0 +1,86 @@
+{
+    "name": "searchwpdocs",
+    "displayName": "Search WordPress Docs",
+    "description": "Search selected text in the WordPress Codex/Code Reference sites.",
+    "version": "1.0.0",
+    "publisher": "yogensia",
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "wordpress"
+    ],
+    "icon": "images/icon-128.png",
+    "license": "MIT",
+    "homepage": "https://github.com/yogensia/VSCodeSearchWPFunctions",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yogensia/VSCodeSearchWPFunctions"
+    },
+    "bugs": {
+        "url": "https://github.com/yogensia/VSCodeSearchWPFunctions/issues",
+        "email": "yogensia@gmail.com"
+    },
+    "activationEvents": [
+        "onCommand:extension.searchCodeRef",
+        "onCommand:extension.searchCodex"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.searchCodeRef",
+                "title": "Search in WordPress Code Reference..."
+            },
+            {
+                "command": "extension.searchCodex",
+                "title": "Search in WordPress Codex..."
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "extension.searchCodeRef",
+                    "when": "editorHasSelection && editorLangId == php",
+                    "group": "4_search"
+                },
+                {
+                    "command": "extension.searchCodex",
+                    "when": "editorHasSelection && editorLangId == php",
+                    "group": "4_search"
+                }
+            ]
+        },
+        "keybindings": [
+            {
+                "command": "extension.searchCodeRef",
+                "key": "ctrl+alt+f",
+                "mac": "cmd+alt+f",
+                "when": "editorHasSelection && editorLangId == php"
+            },
+            {
+                "command": "extension.searchCodex",
+                "key": "ctrl+alt+g",
+                "mac": "cmd+alt+g",
+                "when": "editorHasSelection && editorLangId == php"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
