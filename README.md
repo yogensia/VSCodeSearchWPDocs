@@ -2,7 +2,7 @@
 
 Search WordPress Docs is a [VS Code](https://code.visualstudio.com/) extension that allows you to select text inside the VS Code editor and search the WordPress Codex/Code Reference sites for a matching function, class, method, or hook.
 
-![](images/material-night.png)
+![Screenshot](https://github.com/yogensia/VSCodeSearchWPDocs/raw/master/images/screenshot-1.png)
 
 ## Features
 
