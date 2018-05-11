@@ -15,13 +15,13 @@
     ],
     "icon": "images/icon-128.png",
     "license": "MIT",
-    "homepage": "https://github.com/yogensia/VSCodeSearchWPFunctions",
+    "homepage": "https://github.com/yogensia/VSCodeSearchWPDocs",
     "repository": {
         "type": "git",
-        "url": "https://github.com/yogensia/VSCodeSearchWPFunctions"
+        "url": "https://github.com/yogensia/VSCodeSearchWPDocs"
     },
     "bugs": {
-        "url": "https://github.com/yogensia/VSCodeSearchWPFunctions/issues",
+        "url": "https://github.com/yogensia/VSCodeSearchWPDocs/issues",
         "email": "yogensia@gmail.com"
     },
     "activationEvents": [
