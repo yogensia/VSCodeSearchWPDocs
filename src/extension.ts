@@ -13,17 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
   let searchCodexDisposable = vscode.commands.registerCommand(
     "extension.searchCodex",
     () => {
-      searchWpDocs.searchWPDocs("codex");
-    },
-  );
-
-  /**
-   * Search in QueryPosts.com.
-   */
-  let searchQueryPostsDisposable = vscode.commands.registerCommand(
-    "extension.searchQueryPosts",
-    () => {
-      searchWpDocs.searchWPDocs("queryposts");
+      searchWpDocs.searchWPDocs();
     },
   );
 
@@ -31,7 +21,6 @@ export function activate(context: vscode.ExtensionContext) {
    * Dispose.
    */
   context.subscriptions.push(searchCodexDisposable);
-  context.subscriptions.push(searchQueryPostsDisposable);
   context.subscriptions.push(searchWpDocs);
 }
 
@@ -44,26 +33,20 @@ class SearchWPDocs {
   constructor() {
   }
 
-  searchWPDocs(docSite: string) {
-    // No open text editor
+  searchWPDocs() {
+    // Get configuration.
+    var settings = vscode.workspace.getConfiguration("searchwpdocs");
+
+    // No open text editor.
     let editor = vscode.window.activeTextEditor;
     if (!editor) {
       return;
     }
 
-    // Codex or Developer Reference site?
-    let site;
-    if ("codex" === docSite) {
-      site = "https://codex.wordpress.org/";
-    } else {
-      site = "https://queryposts.com/function/";
-    }
-
     let selection = editor.selection;
     let text = editor.document.getText(selection);
-    let url = site + text + '/';
 
-    vscode.commands.executeCommand('vscode.open', vscode.Uri.parse( url ));
+    vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(settings.site + text));
   }
 
   dispose() {

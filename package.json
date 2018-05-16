@@ -2,7 +2,7 @@
     "name": "searchwpdocs",
     "displayName": "Search WordPress Docs",
     "description": "Search selected text in the WordPress Codex/Code Reference sites.",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "publisher": "yogensia",
     "engines": {
         "vscode": "^1.23.0"
@@ -30,25 +30,27 @@
     ],
     "main": "./out/extension",
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Search WordPress Docs configuration",
+            "properties": {
+                "searchwpdocs.site": {
+                    "type": "string",
+                    "default": "https://google.com/search?btnI&q=url:developer.wordpress.org ",
+                    "description": "Url where to search for the function. Examples: 'https://codex.wordpress.org/', 'https://queryposts.com/function/', 'https://google.com/search?btnI&q=url:developer.wordpress.org '."
+                }
+            }
+        },
         "commands": [
             {
                 "command": "extension.searchCodex",
-                "title": "Search in WordPress Codex/Dev Reference..."
-            },
-            {
-                "command": "extension.searchQueryPosts",
-                "title": "Search in Queryposts.com..."
+                "title": "Search in WordPress Docs..."
             }
         ],
         "menus": {
             "editor/context": [
                 {
                     "command": "extension.searchCodex",
-                    "when": "editorHasSelection && editorLangId == php",
-                    "group": "4_search"
-                },
-                {
-                    "command": "extension.searchQueryPosts",
                     "when": "editorHasSelection && editorLangId == php",
                     "group": "4_search"
                 }
@@ -59,12 +61,6 @@
                 "command": "extension.searchCodex",
                 "key": "ctrl+alt+f",
                 "mac": "cmd+alt+f",
-                "when": "editorHasSelection && editorLangId == php"
-            },
-            {
-                "command": "extension.searchQueryPosts",
-                "key": "ctrl+alt+g",
-                "mac": "cmd+alt+g",
                 "when": "editorHasSelection && editorLangId == php"
             }
         ]

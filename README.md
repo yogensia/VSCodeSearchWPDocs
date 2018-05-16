@@ -8,26 +8,39 @@ Search WordPress Docs is a [VS Code](https://code.visualstudio.com/) extension t
 
 The extension takes your selected text and opens google's first result that matches.
 
-You can choose if you want to search in the Developer Reference site of in the good old Codex.
-
-To make a search:
+### To make a search
 
 - Open/Create a PHP file. The extension will ignore other languages.
 - Select some text in the editor, for example a function like `get_posts`.
 - For best results, select text only, no symbols.
 - Now you can choose how to invoke the search:
-  - Context Menu: Right click on the editor and click on "Search in WordPress Developer Reference..." or  "Search in WordPress Codex...".
-  - key Binding: You can Search the Developer Reference with Ctrl+Alt+F, or the Codex with Ctrl+Alt+G.
-  - Command Palette: You can do a search directly fromt he Command Palette, pressing Ctrl+Shift+P, then typying "Wordpress" to filter the commands.
+  - Context Menu: Right click on the editor and click on "Search in WordPress Docs...".
+  - key Binding: Ctrl+Alt+F by default.
+  - Command Palette: You can do a search directly from the Command Palette, pressing Ctrl+Shift+P, then typying "Wordpress" to filter the commands.
+
+### Configuration
+
+You can use the setting `searchwpdocs.site` to change the url to use for the search. The text you have selected will be appended to the url.
+
+With this setting you can choose it you can choose if you want to search in the [Developer Reference](https://developer.wordpress.org/reference/) site, in the good old [Codex](https://codex.wordpress.org/), or other sites like [QueryPosts](https://queryposts.com/).
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- The extension relies on Google's "I'm feeling lucky" functionality when searching the new WP Developer Resource. This allows retrieving the function page directly instead of opening a search results page, but it also adds an element of unpredictability. I have had no issues so far with it though. If you find an issue let me know know by posting it on [github](https://github.com/yogensia/VSCodeSearchWPDocs/issues).
+
+- If you set the search to the Wordpress Codex, some function will still redirect tot he new Developer Resourse site. This is out of the control of this plugin, as the Developer Resource is meant to replace the older Codex site.
 
 ## Release Notes
 
 This is the Initial Release.
 
-### 1.0.0
+### [1.1.0] - 2018-05-16
 
-Initial release of Search WordPress Functions.
+- Added configuration setting to select where to do the search (Developer Reference, Codex, etc..).
+- Reduced the amount of commands to one, now that it can be customized.
+
+### 1.0.0 - 2018-05-11
+
+- Initial release of Search WordPress Functions.
+
+[1.1.0]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.0.0...v1.1.0
