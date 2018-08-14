@@ -16,7 +16,7 @@ The extension takes your selected text and opens google's first result that matc
 - Now you can choose how to invoke the search:
   - Context Menu: Right click on the editor and click on "Search in WordPress Docs...".
   - key Binding: Ctrl+Alt+F by default.
-  - Command Palette: You can do a search directly from the Command Palette, pressing Ctrl+Shift+P, then typying "Wordpress" to filter the commands.
+  - Command Palette: You can do a search directly from the Command Palette, pressing Ctrl+Shift+P, then typing "WordPress" to filter the commands.
 
 ### Configuration
 
@@ -28,11 +28,13 @@ With this setting you can choose it you can choose if you want to search in the 
 
 - The extension relies on Google's "I'm feeling lucky" functionality when searching the new WP Developer Resource. This allows retrieving the function page directly instead of opening a search results page, but it also adds an element of unpredictability. I have had no issues so far with it though. If you find an issue let me know know by posting it on [github](https://github.com/yogensia/VSCodeSearchWPDocs/issues).
 
-- If you set the search to the Wordpress Codex, some function will still redirect tot he new Developer Resourse site. This is out of the control of this plugin, as the Developer Resource is meant to replace the older Codex site.
+- If you set the search to the WordPress Codex, some function will still redirect tot he new Developer Resource site. This is out of the control of this plugin, as the Developer Resource is meant to replace the older Codex site.
 
 ## Release Notes
 
-This is the Initial Release.
+### [1.1.1] - 2018-08-14
+
+- Fix default google search parameter, changed from 'url' to 'site'. Thanks to 'soderlind' for reporting the error.
 
 ### [1.1.0] - 2018-05-16
 
@@ -43,4 +45,5 @@ This is the Initial Release.
 
 - Initial release of Search WordPress Functions.
 
+[1.1.1]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.0.0...v1.1.0
