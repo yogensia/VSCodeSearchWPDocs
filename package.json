@@ -25,8 +25,7 @@
         "email": "yogensia@gmail.com"
     },
     "activationEvents": [
-        "onCommand:extension.searchCodex",
-        "onCommand:extension.searchQueryPosts"
+        "onCommand:extension.searchCodex"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -36,8 +35,8 @@
             "properties": {
                 "searchwpdocs.site": {
                     "type": "string",
-                    "default": "https://google.com/search?btnI&q=url:developer.wordpress.org ",
-                    "description": "Url where to search for the function. Examples: 'https://codex.wordpress.org/', 'https://queryposts.com/function/', 'https://google.com/search?btnI&q=url:developer.wordpress.org '."
+                    "default": "https://google.com/search?btnI&q=site:developer.wordpress.org ",
+                    "description": "Url where to search for the function. Examples: 'https://codex.wordpress.org/', 'https://queryposts.com/function/', 'https://google.com/search?btnI&q=site:developer.wordpress.org '."
                 }
             }
         },
