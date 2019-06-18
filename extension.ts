@@ -54,4 +54,4 @@ class SearchWPDocs {
 }
 
 // This method is called when your extension is deactivated.
-export function deactivate() {}
+export function deactivate() { }
