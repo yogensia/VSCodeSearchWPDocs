@@ -2,7 +2,7 @@
     "name": "searchwpdocs",
     "displayName": "Search WordPress Docs",
     "description": "Search selected text in the WordPress Codex/Code Reference sites.",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "publisher": "yogensia",
     "engines": {
         "vscode": "^1.23.0"
@@ -50,7 +50,7 @@
             "editor/context": [
                 {
                     "command": "extension.searchCodex",
-                    "when": "editorHasSelection && editorLangId == php",
+                    "when": "editorTextFocus && editorLangId == php",
                     "group": "4_search"
                 }
             ]
@@ -76,6 +76,6 @@
         "@types/node": "^7.0.43",
         "tslint": "^5.8.0",
         "typescript": "^2.6.1",
-        "vscode": "^1.1.21"
+        "vscode": "^1.1.34"
     }
 }

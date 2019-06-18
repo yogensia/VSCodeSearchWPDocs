@@ -32,6 +32,10 @@ With this setting you can choose it you can choose if you want to search in the 
 
 ## Release Notes
 
+### [1.1.2] - 2019-06-18
+
+- It is no longer necessary to select a word, if nothing is selected the extension will search the word at the cursor position.
+
 ### [1.1.1] - 2018-08-14
 
 - Fix default google search parameter, changed from 'url' to 'site'. Thanks to 'soderlind' for reporting the error.
@@ -45,5 +49,6 @@ With this setting you can choose it you can choose if you want to search in the 
 
 - Initial release of Search WordPress Functions.
 
+[1.1.2]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.0.0...v1.1.0
