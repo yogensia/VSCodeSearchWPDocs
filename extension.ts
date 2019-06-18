@@ -33,7 +33,9 @@ class SearchWPDocs {
   constructor() {
   }
 
-  searchWPDocs() {
+  async searchWPDocs() {
+    let searchTerm;
+
     // Get configuration.
     var settings = vscode.workspace.getConfiguration("searchwpdocs");
 
@@ -43,10 +45,29 @@ class SearchWPDocs {
       return;
     }
 
-    let selection = editor.selection;
-    let text = editor.document.getText(selection);
+    // Get search term from selection.
+    // If no selection, attempt grow from cursor position.
+    if (editor.selection.isEmpty) {
+      let selection = editor.document.getWordRangeAtPosition(editor.selection.active);
+      searchTerm = editor.document.getText(selection);
+    } else {
+      let selection = editor.selection;
+      searchTerm = editor.document.getText(selection);
+    }
 
-    vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(settings.site + text));
+    // Check that search term is not empty.
+    if (0 === searchTerm.length) {
+      vscode.window.showErrorMessage('Nothing to search, select or place cursor on a word first!');
+      return;
+    }
+
+    // Check that search term doesn't contain several lines.
+    if (-1 < searchTerm.indexOf("\n")) {
+      vscode.window.showErrorMessage('Please limit selection to one line.');
+      return;
+    }
+
+    vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(settings.site + searchTerm));
   }
 
   dispose() {
