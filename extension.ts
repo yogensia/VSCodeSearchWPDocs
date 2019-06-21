@@ -52,18 +52,11 @@ export function activate(context: vscode.ExtensionContext) {
       searchWpDocs.searchWPDocs(context);
     },
   );
-  let searchCodexLegacyDisposable = vscode.commands.registerCommand(
-    "extension.searchCodexLegacy",
-    () => {
-      searchWpDocs.searchWPDocsLegacy(context);
-    },
-  );
 
   /**
    * Dispose.
    */
   context.subscriptions.push(searchCodexDisposable);
-  context.subscriptions.push(searchCodexLegacyDisposable);
   context.subscriptions.push(searchWpDocs);
 }
 
@@ -113,7 +106,11 @@ class SearchWPDocs {
       return;
     }
 
-
+    // If showResultsInTab setting is disabled, use the legacy method to open results in browser.
+    if (false == settings.openResultsInTab) {
+      vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(settings.site + searchTerm));
+      return;
+    }
 
     /**
      * Get theme.
@@ -129,13 +126,6 @@ class SearchWPDocs {
       const cssThemeRes = onDiskPath.with({ scheme: 'vscode-resource' });
       cssThemeLinkTag = '<link rel="stylesheet" id = "swpd-theme" href="' + cssThemeRes + '" type="text/css" media="all" />';
     }
-
-    // vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(settings.site + searchTerm));
-    // return;
-
-    // HTTP request.
-    // const url = 'https://developer.wordpress.org/reference/functions/' + searchTerm;
-    // const url = settings.site + searchTerm;
 
     // Check it search term is a known function or hook.
     let searchString = settings.site + searchTerm;
@@ -165,12 +155,18 @@ class SearchWPDocs {
       if (2 == splitted.length) {
         splitted = splitted[1].split('<div id="respond" class="comment-respond">', 1);
 
+        // Get tab column value from settings.
+        let tabColumn = vscode.ViewColumn.Active;
+        if (settings.showOnSideTab) {
+          tabColumn = vscode.ViewColumn.Three;
+        }
+
         // Create and show webview panel.
         // https://code.visualstudio.com/api/extension-guides/webview
         const panel = vscode.window.createWebviewPanel(
           searchTerm,
           tabName,
-          vscode.ViewColumn.Three,
+          tabColumn,
           {
             retainContextWhenHidden: true
           }
@@ -186,48 +182,6 @@ class SearchWPDocs {
       }
     });
   }
-
-  /**
-   * Legacy Command, performs a search in the user's browser.
-   */
-  async searchWPDocsLegacy(context: vscode.ExtensionContext) {
-    let searchTerm = "";
-
-    // Get configuration.
-    let settings = vscode.workspace.getConfiguration("searchwpdocs");
-
-    // No open text editor.
-    let editor = vscode.window.activeTextEditor;
-    if (!editor) {
-      return;
-    }
-
-    // Get search term from selection.
-    // If no selection, attempt grow from cursor position.
-    if (editor.selection.isEmpty) {
-      let selection = editor.document.getWordRangeAtPosition(editor.selection.active);
-      searchTerm = editor.document.getText(selection);
-    } else {
-      let selection = editor.selection;
-      searchTerm = editor.document.getText(selection);
-    }
-
-    // Check that search term is not empty.
-    if (0 === searchTerm.length) {
-      vscode.window.showErrorMessage('WPSearchDocs: Nothing to search, select or place cursor on a word first!');
-      return;
-    }
-
-    // Check that search term doesn't contain several lines.
-    if (-1 < searchTerm.indexOf("\n")) {
-      vscode.window.showErrorMessage('WPSearchDocs: Please limit selection to one line!');
-      return;
-    }
-
-    // Open Gogle's first result on browser.
-    vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(settings.site + searchTerm));
-  }
-
   dispose() {
   }
 }

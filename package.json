@@ -32,13 +32,8 @@
     "contributes": {
         "configuration": {
             "type": "object",
-            "title": "Search WordPress Docs configuration",
+            "title": "Search WordPress Docs Configuration",
             "properties": {
-                "searchwpdocs.site": {
-                    "type": "string",
-                    "default": "https://google.com/search?btnI&q=site:developer.wordpress.org ",
-                    "description": "Url to use when performing a search. Only used when the extension doesn't recognize a search term or when using the legacy search command. Examples: 'https://codex.wordpress.org/', 'https://queryposts.com/function/', 'https://google.com/search?btnI&q=site:developer.wordpress.org '."
-                },
                 "searchwpdocs.cssTheme": {
                     "type": "string",
                     "enum": [
@@ -48,6 +43,22 @@
                     ],
                     "default": "one-dark",
                     "description": "Style WordPress documentation on a tab with the following theme."
+                },
+                "searchwpdocs.openResultsInTab": {
+                    "type": "boolean",
+                    "default": true,
+                    "title": "Show search results in a VSCode Tab",
+                    "description": "Results will be shown in a tab instead of opening in your default browser. This limits searches to the preferred documentation site, https://developer.wordpress.org/. If the search term is not recognized by this extension, Google's first result will be shown instead."
+                },
+                "searchwpdocs.site": {
+                    "type": "string",
+                    "default": "https://google.com/search?btnI&q=site:developer.wordpress.org ",
+                    "description": "Url to use when performing a search. Only used when the extension doesn't recognize a search term or when the 'Show Results In Tab' option is disabled. Examples: 'https://codex.wordpress.org/', 'https://queryposts.com/function/', 'https://google.com/search?btnI&q=site:developer.wordpress.org '."
+                },
+                "searchwpdocs.showOnSideTab": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Results will appear on a panel to the right of the editor, instead of opening as a regular tab in your main view. You can always drag and drop tabs and reorder them as you wish once opened."
                 }
             }
         },
@@ -55,21 +66,12 @@
             {
                 "command": "extension.searchCodex",
                 "title": "Search WordPress Docs..."
-            },
-            {
-                "command": "extension.searchCodexLegacy",
-                "title": "Search WordPress Docs... (external)"
             }
         ],
         "menus": {
             "editor/context": [
                 {
                     "command": "extension.searchCodex",
-                    "when": "editorTextFocus && editorLangId == php",
-                    "group": "4_search"
-                },
-                {
-                    "command": "extension.searchCodexLegacy",
                     "when": "editorTextFocus && editorLangId == php",
                     "group": "4_search"
                 }
@@ -80,12 +82,6 @@
                 "command": "extension.searchCodex",
                 "key": "ctrl+alt+f",
                 "mac": "cmd+alt+f",
-                "when": "editorTextFocus && editorLangId == php"
-            },
-            {
-                "command": "extension.searchCodexLegacy",
-                "key": "ctrl+alt+h",
-                "mac": "cmd+alt+h",
                 "when": "editorTextFocus && editorLangId == php"
             }
         ]
