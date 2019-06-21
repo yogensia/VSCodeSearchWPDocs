@@ -25,7 +25,8 @@
         "email": "yogensia@gmail.com"
     },
     "activationEvents": [
-        "onCommand:extension.searchCodex"
+        "onCommand:extension.searchCodex",
+        "onCommand:extension.searchCodexLegacy"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -36,20 +37,39 @@
                 "searchwpdocs.site": {
                     "type": "string",
                     "default": "https://google.com/search?btnI&q=site:developer.wordpress.org ",
-                    "description": "Url where to search for the function. Examples: 'https://codex.wordpress.org/', 'https://queryposts.com/function/', 'https://google.com/search?btnI&q=site:developer.wordpress.org '."
+                    "description": "Url to use when performing a search. Only used when the extension doesn't recognize a search term or when using the legacy search command. Examples: 'https://codex.wordpress.org/', 'https://queryposts.com/function/', 'https://google.com/search?btnI&q=site:developer.wordpress.org '."
+                },
+                "searchwpdocs.cssTheme": {
+                    "type": "string",
+                    "enum": [
+                        "monokai",
+                        "one-dark",
+                        "wp-docs"
+                    ],
+                    "default": "one-dark",
+                    "description": "Style WordPress documentation on a tab with the following theme."
                 }
             }
         },
         "commands": [
             {
                 "command": "extension.searchCodex",
-                "title": "Search in WordPress Docs..."
+                "title": "Search WordPress Docs..."
+            },
+            {
+                "command": "extension.searchCodexLegacy",
+                "title": "Search WordPress Docs... (external)"
             }
         ],
         "menus": {
             "editor/context": [
                 {
                     "command": "extension.searchCodex",
+                    "when": "editorTextFocus && editorLangId == php",
+                    "group": "4_search"
+                },
+                {
+                    "command": "extension.searchCodexLegacy",
                     "when": "editorTextFocus && editorLangId == php",
                     "group": "4_search"
                 }
@@ -60,7 +80,13 @@
                 "command": "extension.searchCodex",
                 "key": "ctrl+alt+f",
                 "mac": "cmd+alt+f",
-                "when": "editorHasSelection && editorLangId == php"
+                "when": "editorTextFocus && editorLangId == php"
+            },
+            {
+                "command": "extension.searchCodexLegacy",
+                "key": "ctrl+alt+h",
+                "mac": "cmd+alt+h",
+                "when": "editorTextFocus && editorLangId == php"
             }
         ]
     },
@@ -74,8 +100,14 @@
     "devDependencies": {
         "@types/mocha": "^2.2.42",
         "@types/node": "^7.0.43",
+        "gulp": "^4.0.2",
+        "gulp-sass": "^4.0.2",
+        "node-sass": "^4.12.0",
         "tslint": "^5.8.0",
         "typescript": "^2.6.1",
         "vscode": "^1.1.34"
+    },
+    "dependencies": {
+        "@types/request": "^2.48.1"
     }
 }
