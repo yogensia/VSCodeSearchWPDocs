@@ -26,11 +26,37 @@ With this setting you can choose it you can choose if you want to search in the 
 
 ## Known Issues
 
-- The extension relies on Google's "I'm feeling lucky" functionality when searching the new WP Developer Resource. This allows retrieving the function page directly instead of opening a search results page, but it also adds an element of unpredictability. I have had no issues so far with it though. If you find an issue let me know know by posting it on [github](https://github.com/yogensia/VSCodeSearchWPDocs/issues).
+- The extension relies on Google's "I'm feeling lucky" functionality when searching the new WP Developer Resource. This allows retrieving the function page directly instead of opening a search results page, but it also adds an element of unpredictability. I have had no issues so far with it though. If you find an issue let me know by posting it on [github](https://github.com/yogensia/VSCodeSearchWPDocs/issues).
 
-- If you set the search to the WordPress Codex, some function will still redirect tot he new Developer Resource site. This is out of the control of this plugin, as the Developer Resource is meant to replace the older Codex site.
+- If you set the search to the WordPress Codex, some functions will still redirect to the new Developer Resource site. This is out of the control of this extension, as the Developer Resource is meant to replace the older Codex site.
+
+## Roadmap
+
+Planned updates can be found at the [project's Trello board](https://trello.com/b/GAayqIox/searchwpdocs).
+
+## Suggestions & Bug Reports
+
+If you find an issue or have any feedback you can let me know by posting on [github](https://github.com/yogensia/VSCodeSearchWPDocs/issues).
+
+## Themes
+
+Search WordPress Docs has a few themes available, used to style the Documentation when viewed in a tab within VSCode.
+
+If you want to help by providing a theme, [check this guide](https://github.com/yogensia/VSCodeSearchWPDocs/blob/master/THEMES-HOW-TO.md).
+
+### List of themes
+
+- WordPress Code Reference
+- One Dark
+- Monokai
 
 ## Release Notes
+
+### [2.0.0] - 2019-06-21
+
+- Added feature to view documentation inside VSCode.
+- Added themes 'WPDocs', 'One Dark' and 'Monokai' for documentation.
+- Fixed keyboard shortcut not working when trying to invoke search without a selection.
 
 ### [1.1.2] - 2019-06-18
 

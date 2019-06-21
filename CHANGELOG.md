@@ -2,6 +2,12 @@
 
 All notable changes to the "Search WordPress Functions" extension will be documented in this file.
 
+## [2.0.0] - 2019-06-21
+
+- Added feature to view documentation inside VSCode.
+- Added themes 'WPDocs', 'One Dark' and 'Monokai' for documentation.
+- Fixed keyboard shortcut not working when trying to invoke search without a selection.
+
 ## [1.1.2] - 2019-06-18
 
 - It is no longer necessary to select a word, if nothing is selected the extension will search the word at the cursor position.
