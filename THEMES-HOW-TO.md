@@ -10,7 +10,7 @@ These files are located in the `/styles/sass/` directory.
 
 This is an example theme file:
 
-```css
+```scss
 /*
  * One Dark
  * Original theme by: Atom Dev Team (https://atom.io/).
