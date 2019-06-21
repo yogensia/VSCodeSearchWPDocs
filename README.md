@@ -2,19 +2,21 @@
 
 ![downloads](https://img.shields.io/visual-studio-marketplace/d/yogensia.searchwpdocs.svg) ![version](https://img.shields.io/visual-studio-marketplace/v/yogensia.searchwpdocs.svg) ![license](https://img.shields.io/github/license/yogensia/VSCodeSearchWPDocs.svg) ![issues](https://img.shields.io/github/issues-raw/yogensia/VSCodeSearchWPDocs.svg) [![donate](https://img.shields.io/badge/donate-paypal-brightgreen.svg)](https://paypal.me/JPardilla)
 
-Search WordPress Docs is a [VS Code](https://code.visualstudio.com/) extension that allows you to select text inside the VS Code editor and search the WordPress Codex/Code Reference sites for a matching function, class, method, or hook.
+**Search WordPress Docs** is an extension that allows you to search functions, classes, methods, or hooks on the official WordPress documentation without having to leave VS Code.
 
 ![Screenshot](https://github.com/yogensia/VSCodeSearchWPDocs/raw/master/images/screenshot-1.png)
 
-## Features
+## How it Works
 
-The extension takes your selected text and opens google's first result that matches.
+**Search WordPress Docs** takes your selected text and matches it against a dictionary of known WordPress functions and hooks. If it recognizes your search term, it opens the according Documentation page https://developer.wordpress.org/, otherwise it opens Google's first result that matches.
+
+Since version 2.0.0, results are shown on a panel to the right of your VS Code editor, and offers a few themes to style the results too. This is optional, and can be disabled from the extension's settings if you prefer to open the results on your browser.
 
 ### To make a search
 
-- Open/Create a PHP file. The extension will ignore other languages.
-- Select some text in the editor, for example a function like `get_posts`.
-- For best results, select text only, no symbols.
+- Open/Create a PHP file. The extension ignores other languages.
+- Place your cursor on a word you want to search, or manually select it, for example a function like `get_posts`.
+- When manually selecting text, select only a word, no symbols, or code blocks.
 - Now you can choose how to invoke the search:
   - Context Menu: Right click on the editor and click on "Search in WordPress Docs...".
   - key Binding: Ctrl+Alt+F by default.
@@ -22,15 +24,18 @@ The extension takes your selected text and opens google's first result that matc
 
 ### Configuration
 
-You can use the setting `searchwpdocs.site` to change the url to use for the search. The text you have selected will be appended to the url.
-
-With this setting you can choose it you can choose if you want to search in the [Developer Reference](https://developer.wordpress.org/reference/) site, in the good old [Codex](https://codex.wordpress.org/), or other sites like [QueryPosts](https://queryposts.com/).
+- `searchwpdocs.cssTheme`: Choose between several themes to style the documentation when it is showed in a tab inside VSCode.
+- `searchwpdocs.openResultsInTab`: Enabled by default, it shows the documentation in a tab inside VSCode. If it is disabled, documentation will open in your browser instead.
+- `searchwpdocs.showOnSideTab`: Allows you to specify whether you want documentation to open on a side panel or as a regular tab. You can of course drag and drop the tab after it opens and rearrange it as you like.
+- `searchwpdocs.site`: Change the url to use for the search when the word isn't recognized by the extension. The text you have selected will be appended to the url specified here. With this setting you can choose it you can choose if you want to search in the [Developer Reference](https://developer.wordpress.org/reference/) site, in the good old [Codex](https://codex.wordpress.org/), or other sites like [QueryPosts](https://queryposts.com/).
 
 ## Known Issues
 
-- The extension relies on Google's "I'm feeling lucky" functionality when searching the new WP Developer Resource. This allows retrieving the function page directly instead of opening a search results page, but it also adds an element of unpredictability. I have had no issues so far with it though. If you find an issue let me know by posting it on [github](https://github.com/yogensia/VSCodeSearchWPDocs/issues).
+- If a word is not found in the internal dictionary, the extension will rely on Google's "I'm feeling lucky" functionality to show the best guess match, so results might be less accurate in that case. This should rarely happen when searching for functions and hooks.
 
-- If you set the search to the WordPress Codex, some functions will still redirect to the new Developer Resource site. This is out of the control of this extension, as the Developer Resource is meant to replace the older Codex site.
+- When showing results in VSCode, only results from the [Developer Reference](https://developer.wordpress.org/reference/) site will be shown. Other documentation sources such as the Codex are not available in this mode.
+
+- If you set the search site in settings to the WordPress Codex, some functions will still redirect to the new Developer Resource site. This is out of the control of this extension, as the Developer Resource is meant to replace the older Codex site.
 
 ## Roadmap
 
@@ -44,7 +49,7 @@ If you find an issue or have any feedback you can let me know by posting on [git
 
 Search WordPress Docs has a few themes available, used to style the Documentation when viewed in a tab within VSCode.
 
-If you want to help by providing a theme, [check this guide](https://github.com/yogensia/VSCodeSearchWPDocs/blob/master/THEMES-HOW-TO.md).
+If you want to help by providing a theme, [check this guide](https://github.com/yogensia/VSCodeSearchWPDocs/blob/master/THEMES-HOW-TO.md), thanks.
 
 ### List of themes
 
@@ -77,6 +82,7 @@ If you want to help by providing a theme, [check this guide](https://github.com/
 
 - Initial release of Search WordPress Functions.
 
+[2.0.0]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.2...v2.0.0
 [1.1.2]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.0.0...v1.1.0
