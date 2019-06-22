@@ -14,11 +14,11 @@
 
 Since version 2.0.0, results are shown on a panel to the right of your VSCode editor, and offers a few themes to style the results too. This is optional, and can be disabled from the extension's settings if you prefer to open the results on your browser.
 
-### To Make a Search
-
 <div align="center">
   <img src="https://github.com/yogensia/VSCodeSearchWPDocs/raw/master/images/screenshot-1.png" alt="Search WordPress Docs screenshot" title="Search WordPress Docs screenshot" />
 </div>
+
+### To Make a Search
 
 - Open/Create a PHP file. The extension ignores other languages.
 - Place your cursor on a word you want to search, or manually select it, for example a function like `get_posts`.
@@ -35,7 +35,7 @@ Documentation will appear on a side tab in VSCode. You can use the Table of Cont
 - `searchwpdocs.cssTheme`: Choose between several themes to style the documentation when it is showed in a tab inside VSCode.
 - `searchwpdocs.openResultsInTab`: Enabled by default, it shows the documentation in a tab inside VSCode. If it is disabled, documentation will open in your browser instead.
 - `searchwpdocs.showOnSideTab`: Allows you to specify whether you want documentation to open on a side panel or as a regular tab. You can of course drag and drop the tab after it opens and rearrange it as you like.
-- `searchwpdocs.site`: Change the url to use for the search when the word isn't recognized by the extension. The text you have selected will be appended to the url specified here. With this setting you can choose it you can choose if you want to search in the [Developer Reference](https://developer.wordpress.org/reference/) site, in the good old [Codex](https://codex.wordpress.org/), or other sites like [QueryPosts](https://queryposts.com/).
+- `searchwpdocs.site`: Change the url to use for the search when the word isn't recognized by the extension. The text you have selected will be appended to the url specified here. With this setting you can choose if you want to search in the [Developer Reference](https://developer.wordpress.org/reference/) site, in the good old [Codex](https://codex.wordpress.org/), or other sites like [QueryPosts](https://queryposts.com/).
 
 ## Known Issues
 
