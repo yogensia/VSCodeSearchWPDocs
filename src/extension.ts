@@ -143,16 +143,36 @@ class SearchWPDocs {
       vscode.window.showWarningMessage('WPSearchDocs: Unknown word! Opening Google\'s first result...');
     }
 
+    // Make HTTP request to docs site and handle it.
     request({
-      headers: {}, // add here headers if you needed
       uri: searchString,
       method: 'GET',
+      timeout: 5000
     }, (err, res, body) => {
+      // If there's and error show the message and abort.
+      if (err) {
+        switch (err.code) {
+          case 'ETIMEDOUT':
+            vscode.window.showErrorMessage('WPSearchDocs: Error code \'ETIMEDOUT\'. Request timed out, server might be unresponsive.');
+            return;
+          case 'ENOTFOUND':
+            vscode.window.showErrorMessage('WPSearchDocs: Error code \'ENOTFOUND\'. Server can\'t be reached or might be unresponsive.');
+            return;
+        }
+        vscode.window.showErrorMessage('WPSearchDocs: Unknown error, documentation couldn\'t be loaded.');
+        return;
+      }
+
+      // Split response and discard header, which is added locally.
       var splitted = body.split('<div id="content" class="site-content">', 2);
 
-      // If split doesn have 2 pieces it means we have an unexpected response,
+      // If split doesn't have 2 pieces it means we have an unexpected response,
       // If so fallback to on-browser load.
-      if (2 == splitted.length) {
+      if (2 !== splitted.length) {
+        // Try to load page on browser.
+        vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(settings.site + searchTerm));
+      } else {
+        // If respons is good, we split again, this time to clean the footer.
         splitted = splitted[1].split('<div id="respond" class="comment-respond">', 1);
 
         // Get tab column value from settings.
