@@ -1,17 +1,18 @@
 {
     "name": "searchwpdocs",
     "displayName": "Search WordPress Docs",
-    "description": "Search selected text in the WordPress Codex/Code Reference sites.",
-    "version": "1.1.2",
+    "description": "Search selected text in the WordPress Code Reference without leaving VSCode.",
+    "version": "2.0.0",
     "publisher": "yogensia",
     "engines": {
-        "vscode": "^1.23.0"
+        "vscode": "^1.35.0"
     },
     "categories": [
         "Other"
     ],
     "keywords": [
-        "wordpress"
+        "wordpress",
+        "documentation"
     ],
     "icon": "images/icon-128.png",
     "license": "MIT",
@@ -25,8 +26,7 @@
         "email": "yogensia@gmail.com"
     },
     "activationEvents": [
-        "onCommand:extension.searchCodex",
-        "onCommand:extension.searchCodexLegacy"
+        "onCommand:extension.searchCodex"
     ],
     "main": "./out/extension",
     "contributes": {
