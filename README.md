@@ -67,6 +67,10 @@ If you want to help by providing a theme, [check this guide](https://github.com/
 
 ## Release Notes
 
+### [2.0.1] - 2019-06-22
+
+- Troubleshooting error with request module.
+
 ### [2.0.0] - 2019-06-21
 
 - Added feature to view documentation inside VSCode.
@@ -90,6 +94,7 @@ If you want to help by providing a theme, [check this guide](https://github.com/
 
 - Initial release of Search WordPress Functions.
 
+[2.0.1]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.2...v2.0.0
 [1.1.2]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.0...v1.1.1

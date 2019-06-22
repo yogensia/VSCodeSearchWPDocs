@@ -1,5 +1,9 @@
 # Change Log
 
+## [2.0.1] - 2019-06-22
+
+- Troubleshooting error with request module.
+
 All notable changes to the "Search WordPress Functions" extension will be documented in this file.
 
 ## [2.0.0] - 2019-06-21
@@ -25,6 +29,7 @@ All notable changes to the "Search WordPress Functions" extension will be docume
 
 - Initial Release.
 
+[2.0.1]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.2...v2.0.0
 [1.1.2]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.0...v1.1.1
