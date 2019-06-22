@@ -113,17 +113,18 @@ class SearchWPDocs {
     }
 
     /**
-     * Get theme.
+     * Get resources.
      */
-    let cssThemeLinkTag = "";
+
+    // Get WordPress logo.
+    const WPLogoPath = vscode.Uri.file(path.join(context.extensionPath, 'images', 'wporg-logo.svg'));
+    const WPLogoRes = WPLogoPath.with({ scheme: 'vscode-resource' });
 
     // If theme = wp-docs then no additional css is needed, just use the default styles.
+    let cssThemeLinkTag = "";
     if ("wp-docs" !== settings.cssTheme) {
-      const onDiskPath = vscode.Uri.file(
-        path.join(context.extensionPath, 'styles', 'theme-' + settings.cssTheme + '.css')
-      );
-
-      const cssThemeRes = onDiskPath.with({ scheme: 'vscode-resource' });
+      const cssThemePath = vscode.Uri.file(path.join(context.extensionPath, 'styles', 'theme-' + settings.cssTheme + '.css'));
+      const cssThemeRes = cssThemePath.with({ scheme: 'vscode-resource' });
       cssThemeLinkTag = '<link rel="stylesheet" id = "swpd-theme" href="' + cssThemeRes + '" type="text/css" media="all" />';
     }
 
@@ -194,7 +195,7 @@ class SearchWPDocs {
         );
 
         // Set webview panel HTML.
-        const headHTML = webview_html.getHtmlHead(isKnownWord, searchString, searchTerm, cssThemeLinkTag);
+        const headHTML = webview_html.getHtmlHead(isKnownWord, searchString, searchTerm, cssThemeLinkTag, WPLogoRes.toString());
         const foooterHTML = webview_html.getHtmlFooter();
         panel.webview.html = headHTML + splitted[0].trim() + foooterHTML;
       }

@@ -198,3 +198,50 @@ footer.feedback-links {
   margin: 15px;
   padding: 15px;
 }
+
+/* WordPress.org Header */
+#main-header {
+  background: #23282d;
+  margin: 0 0 30px;
+  padding: 10px 0 15px;
+  overflow: hidden;
+}
+
+#main-header h1 {
+  margin-bottom: 0;
+}
+
+#main-header h1 a {
+  display: block;
+  margin: 15px auto 0;
+  max-width: 300px;
+  padding: 0 15px;
+}
+
+#wporg-header-menu {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+#wporg-header-menu li {
+  font-size: 14px;
+  list-style: none;
+  padding: 5px;
+}
+
+#wporg-header-menu li a {
+  color: #eee;
+  text-decoration: none;
+}
+
+#wporg-header-menu li a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 650px) {
+  #wporg-header-menu {
+    display: none;
+  }
+}
