@@ -2,7 +2,7 @@
     "name": "searchwpdocs",
     "displayName": "Search WordPress Docs",
     "description": "Search selected text in the WordPress Code Reference without leaving VSCode.",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "publisher": "yogensia",
     "engines": {
         "vscode": "^1.35.0"
@@ -104,6 +104,7 @@
         "vscode": "^1.1.34"
     },
     "dependencies": {
-        "@types/request": "^2.48.1"
+        "@types/request": "^2.48.1",
+		"request": "^2.88.0"
     }
 }
