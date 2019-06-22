@@ -188,7 +188,8 @@ class SearchWPDocs {
           tabName,
           tabColumn,
           {
-            retainContextWhenHidden: true
+            retainContextWhenHidden: true,
+            localResourceRoots: [vscode.Uri.file(context.extensionPath)]
           }
         );
 
@@ -196,12 +197,10 @@ class SearchWPDocs {
         const headHTML = webview_html.getHtmlHead(isKnownWord, searchString, searchTerm, cssThemeLinkTag);
         const foooterHTML = webview_html.getHtmlFooter();
         panel.webview.html = headHTML + splitted[0].trim() + foooterHTML;
-      } else {
-        // Try to load page on browser.
-        vscode.commands.executeCommand("vscode.open", vscode.Uri.parse(settings.site + searchTerm));
       }
     });
   }
+
   dispose() {
   }
 }
