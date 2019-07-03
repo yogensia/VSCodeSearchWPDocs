@@ -65,37 +65,6 @@ If you want to help by providing a theme, [check this guide](https://github.com/
 - One Dark
 - Monokai
 
-## Release Notes
+## Changelog
 
-### [2.0.1] - 2019-06-22
-
-- Troubleshooting error with request module.
-
-### [2.0.0] - 2019-06-21
-
-- Added feature to view documentation inside VSCode.
-- Added themes 'WPDocs', 'One Dark' and 'Monokai' for documentation.
-- Fixed keyboard shortcut not working when trying to invoke search without a selection.
-
-### [1.1.2] - 2019-06-18
-
-- It is no longer necessary to select a word, if nothing is selected the extension will search the word at the cursor position.
-
-### [1.1.1] - 2018-08-14
-
-- Fix default google search parameter, changed from 'url' to 'site'. Thanks to 'soderlind' for reporting the error.
-
-### [1.1.0] - 2018-05-16
-
-- Added configuration setting to select where to do the search (Developer Reference, Codex, etc..).
-- Reduced the amount of commands to one, now that it can be customized.
-
-### 1.0.0 - 2018-05-11
-
-- Initial release of Search WordPress Functions.
-
-[2.0.1]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v2.0.0...v2.0.1
-[2.0.0]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.2...v2.0.0
-[1.1.2]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.1...v1.1.2
-[1.1.1]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.1.0...v1.1.1
-[1.1.0]: https://github.com/yogensia/VSCodeSearchWPDocs/compare/v1.0.0...v1.1.0
+All notable changes for each version of this extension are documented in the [changelog](https://github.com/yogensia/VSCodeSearchWPDocs/blob/master/CHANGELOG.md).
