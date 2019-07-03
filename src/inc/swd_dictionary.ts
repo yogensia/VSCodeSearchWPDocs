@@ -1173,7 +1173,8 @@ export function isFunction(functionName: string) {
     "add_term_meta",
     "update_term_meta",
     "wp_update_nav_menu_item",
-    "get_admin_page_title"
+    "get_admin_page_title",
+    "wp_widgets_init"
   ];
 
   if (wpFunctions.includes(functionName)) {
@@ -1182,8 +1183,6 @@ export function isFunction(functionName: string) {
     return false;
   }
 }
-
-
 
 /**
  * Check if given string is a known Hook name.
@@ -1436,7 +1435,8 @@ export function isHook(hookName: string) {
     "get_(meta_type)_metadata",
     "pre_kses",
     "protected_title_format",
-    "private_title_format"
+    "private_title_format",
+    "widgets_init"
   ];
 
   if (wpHooks.includes(hookName)) {
