@@ -2,6 +2,10 @@
 
 All notable changes for each version of this extension are documented in this file.
 
+## 3.0.1 - 2024-05-07
+
+- Update Readme in VSCode Marketplace.
+
 ## 3.0.0 - 2024-05-07
 
 - Updated extension to work with new WP Docs redesign.

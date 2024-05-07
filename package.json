@@ -2,7 +2,7 @@
     "name": "searchwpdocs",
     "displayName": "Search WordPress Docs",
     "description": "Search selected text in the WordPress Code Reference without leaving VSCode.",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "publisher": "yogensia",
     "author": {
         "name": "Yogensia",
