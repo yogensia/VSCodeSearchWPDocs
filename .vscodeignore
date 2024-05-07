@@ -1,9 +1,34 @@
-.vscode/**
-.vscode-test/**
-out/test/**
-out/**/*.map
-src/**
+# source
+src
+scripts
+styles
+vite
+
+# output
+out
+!out/extension.js
+!out/styles/**/*.css
+*.map
+*.vsix
+
+# misc
+TODO.md
+
+# test
+test
+test-workspace
+.vscode-test
+
+# configs
+.github
+.vscode
+tsconfig.*
+.eslintrc*
+.prettier*
 .gitignore
-tsconfig.json
-vsc-extension-quickstart.md
-tslint.json
+pnpm-lock.yaml
+vite.config.js
+
+# esbuild-visualizer
+meta.json
+stats.html

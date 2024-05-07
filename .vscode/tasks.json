@@ -5,16 +5,25 @@
     "tasks": [
         {
             "type": "npm",
-            "script": "watch",
-            "problemMatcher": "$tsc-watch",
+            "script": "esbuild:watch",
+            "problemMatcher": "$esbuild-watch",
             "isBackground": true,
-            "presentation": {
-                "reveal": "never"
-            },
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "compile:test",
+            "type": "npm",
+            "script": "compile:test",
+            "problemMatcher": "$tsc"
+        },
+        {
+            "label": "compile:sass",
+            "type": "npm",
+            "script": "compile:sass",
+            "problemMatcher": "$tsc"
         }
     ]
 }

@@ -2,3 +2,8 @@ out
 node_modules
 .vscode-test/
 *.vsix
+TODO.md
+
+# esbuild-visualizer
+meta.json
+stats.html

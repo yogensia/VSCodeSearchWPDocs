@@ -2,19 +2,13 @@
     "name": "searchwpdocs",
     "displayName": "Search WordPress Docs",
     "description": "Search selected text in the WordPress Code Reference without leaving VSCode.",
-    "version": "2.0.1",
+    "version": "3.0.0",
     "publisher": "yogensia",
-    "engines": {
-        "vscode": "^1.35.0"
+    "author": {
+        "name": "Yogensia",
+        "email": "yogensia@gmail.com",
+        "url": "https://www.yogensia.com/"
     },
-    "categories": [
-        "Other"
-    ],
-    "keywords": [
-        "wordpress",
-        "documentation"
-    ],
-    "icon": "images/icon-128.png",
     "license": "MIT",
     "homepage": "https://github.com/yogensia/VSCodeSearchWPDocs",
     "repository": {
@@ -25,21 +19,29 @@
         "url": "https://github.com/yogensia/VSCodeSearchWPDocs/issues",
         "email": "yogensia@gmail.com"
     },
-    "activationEvents": [
-        "onCommand:extension.searchCodex"
+    "categories": [
+        "Other"
     ],
-    "main": "./out/extension",
+    "keywords": [
+        "wordpress",
+        "documentation"
+    ],
+    "main": "./out/extension.js",
+    "icon": "./assets/icon-128.png",
+    "engines": {
+        "vscode": "^1.86.0"
+    },
+    "activationEvents": [],
     "contributes": {
         "configuration": {
             "type": "object",
-            "title": "Search WordPress Docs Configuration",
+            "title": "Search WordPress Docs",
             "properties": {
                 "searchwpdocs.cssTheme": {
                     "type": "string",
                     "enum": [
                         "monokai",
-                        "one-dark",
-                        "wp-docs"
+                        "one-dark"
                     ],
                     "default": "one-dark",
                     "description": "Style WordPress documentation on a tab with the following theme."
@@ -52,7 +54,7 @@
                 },
                 "searchwpdocs.site": {
                     "type": "string",
-                    "default": "https://google.com/search?btnI&q=site:developer.wordpress.org ",
+                    "default": "https://google.com/search?q=site:developer.wordpress.org ",
                     "description": "Url to use when performing a search. Only used when the extension doesn't recognize a search term or when the 'Show Results In Tab' option is disabled. Examples: 'https://codex.wordpress.org/', 'https://queryposts.com/function/', 'https://google.com/search?btnI&q=site:developer.wordpress.org '."
                 },
                 "searchwpdocs.showOnSideTab": {
@@ -86,25 +88,69 @@
             }
         ]
     },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    "eslintConfig": {
+        "extends": "@yutengjing/eslint-config-typescript",
+        "ignorePatterns": [
+            "test-workspace"
+        ]
     },
-    "devDependencies": {
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^7.0.43",
-        "gulp": "^4.0.2",
-        "gulp-sass": "^4.0.2",
-        "node-sass": "^4.12.0",
-        "tslint": "^5.8.0",
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.34"
+    "prettier": "@yutengjing/prettier-config",
+    "lint-staged": {
+        "*.{ts,json,md}": [
+            "eslint --fix",
+            "prettier --write"
+        ]
+    },
+    "simple-git-hooks": {
+        "pre-commit": "npx lint-staged"
+    },
+    "scripts": {
+        "sass": "vite --open",
+        "compile:sass": "sass --no-source-map --style compressed styles/sass:out/styles",
+        "vscode:prepublish": "pnpm compile:sass && pnpm esbuild:base --minify",
+        "preinstall": "npx only-allow pnpm",
+        "postinstall": "stale-dep -u",
+        "prepare": "simple-git-hooks",
+        "clean": "npx rimraf -rf ./out",
+        "esbuild:base": "stale-dep && tsx scripts/esbuild.ts",
+        "esbuild:watch": "pnpm compile:sass && pnpm esbuild:base --sourcemap --watch",
+        "esbuild:analyze": "pnpm esbuild:base --minify --metafile --analyze && esbuild-visualizer --metadata ./meta.json --open",
+        "compile:test": "pnpm clean && tsc -b ./test/tsconfig.json",
+        "lint": "eslint src --ext ts",
+        "test": "stale-dep && pnpm compile:test && node ./out/test/runTests.js",
+        "package": "vsce package --no-dependencies",
+        "publish:vs-marketplace": "vsce publish --no-dependencies",
+        "publish:open-vsx": "ovsx publish --no-dependencies"
     },
     "dependencies": {
-        "@types/request": "^2.48.1",
-		"request": "^2.88.0"
+        "axios": "^1.6.8",
+        "cheerio": "1.0.0-rc.12"
+    },
+    "devDependencies": {
+        "@types/glob": "^8.1.0",
+        "@types/mocha": "^10.0.6",
+        "@types/node": "^20.11.20",
+        "@types/vscode": "^1.86.0",
+        "@vscode/test-electron": "^2.3.9",
+        "@vscode/vsce": "^2.24.0",
+        "@yutengjing/eslint-config-typescript": "^0.5.2",
+        "@yutengjing/prettier-config": "^1.1.2",
+        "@yutengjing/release": "^0.2.0",
+        "@yutengjing/tsconfig-node": "^0.0.5",
+        "esbuild": "^0.20.1",
+        "esbuild-visualizer": "^0.6.0",
+        "eslint": "^8.57.0",
+        "glob": "^10.3.10",
+        "lint-staged": "^15.2.2",
+        "mocha": "^10.3.0",
+        "ovsx": "^0.8.3",
+        "prettier": "^3.2.5",
+        "rimraf": "^5.0.5",
+        "sass": "^1.75.0",
+        "simple-git-hooks": "^2.9.0",
+        "stale-dep": "^0.7.0",
+        "tsx": "^4.7.1",
+        "typescript": "^5.3.3",
+        "vite": "^5.2.11"
     }
 }
