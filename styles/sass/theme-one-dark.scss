@@ -16,13 +16,14 @@ $text-heading: #eeeeee;
 $text-link      : #3fa0cc;
 $text-link-hover: #45baf0;
 
-$code-function: #61afef;
+$code-keyword : #61afef;
 $code-type    : #c678dd;
 $code-name    : #e06c75;
-$code-default : #d19a66;
-$code-block   : #d19a66;
+$code-string  : #e5c07b;
+$code-default : #e5c07b;
 
 $font-family-text: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-code: "Operator Mono", Inconsolata, Menlo, Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
+@import 'normalize';
 @import 'rules';

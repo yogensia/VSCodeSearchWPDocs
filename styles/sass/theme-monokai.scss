@@ -5,9 +5,9 @@
  */
 
 $background         : #272822;
-$background-darker  : #1e1f1c;
-$background-brighter: #414339;
-$background-border  : #5a5a5a ;
+$background-darker  : #1d1e19;
+$background-brighter: #32332d;
+$background-border  : #5a5a5a;
 
 $text        : #f8f8f2;
 $text-dimmer : #75715e;
@@ -16,13 +16,14 @@ $text-heading: #f8f8f2;
 $text-link      : #3fa0cc;
 $text-link-hover: #45baf0;
 
-$code-function: #a6e22e ;
-$code-type    : #66d9ef ;
-$code-name    : #f8f8f2 ;
-$code-default : #ae81ff;
-$code-block   : #e6db74;
+$code-keyword : #a6e22e;
+$code-type    : #fdfff1;
+$code-name    : #ae81ff;
+$code-string  : #ffd866;
+$code-default : #f92672;
 
 $font-family-text: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-code: "Operator Mono", Inconsolata, Menlo, Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
+@import 'normalize';
 @import 'rules';

@@ -1,0 +1,2498 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+  <head profile="http://gmpg.org/xfn/11">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WordPress Developer Resources</title>
+  </head>
+  <body
+    id="wordpress-org"
+    class="wp-parser-function-template-default single single-wp-parser-function postid-0 no-customize-support vscode-dark"
+    role="document"
+    data-vscode-theme-kind="vscode-dark"
+    data-vscode-theme-name="Dark Modern"
+    data-vscode-theme-id="Default Dark Modern"
+  >
+    <div id="page" class="hfeed site devhub-wrap">
+      <main id="main" class="site-main" role="main">
+        <span id="top"></span>
+        <header id="main-header">
+          <h1>
+            <a href="https://wordpress.org" title="https://wordpress.org"
+              ><img alt="WordPress" src=""
+            /></a>
+          </h1>
+          <nav aria-label="Main Menu">
+            <ul id="wporg-header-menu" class="nav-menu">
+              <li class="menu-item">
+                <a
+                  href="https://wordpress.org/news/"
+                  title="https://wordpress.org/news/"
+                  >News</a
+                >
+              </li>
+              <li class="menu-item">
+                <a
+                  href="https://wordpress.org/showcase/"
+                  title="https://wordpress.org/showcase/"
+                  >Showcase</a
+                >
+              </li>
+              <li class="menu-item">
+                <a
+                  href="https://wordpress.org/hosting/"
+                  title="https://wordpress.org/hosting/"
+                  >Hosting</a
+                >
+              </li>
+              <li class="menu-item">
+                <a
+                  href="https://wordpress.org/themes/"
+                  title="https://wordpress.org/themes/"
+                  >Themes</a
+                >
+              </li>
+              <li class="menu-item">
+                <a
+                  href="https://wordpress.org/plugins/"
+                  title="https://wordpress.org/plugins/"
+                  >Plugins</a
+                >
+              </li>
+              <li class="menu-item">
+                <a
+                  href="https://learn.wordpress.org/"
+                  title="https://learn.wordpress.org/"
+                  >Learn</a
+                >
+              </li>
+              <li class="menu-item">
+                <a
+                  href="https://make.wordpress.org/"
+                  title="https://make.wordpress.org/"
+                  >Get Involved</a
+                >
+              </li>
+              <li class="menu-item">
+                <a
+                  href="https://wordpress.org/about/"
+                  title="https://wordpress.org/about/"
+                  >About</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <p id="swpd-intro">
+          This article is part of the
+          <a
+            href="https://developer.wordpress.org/"
+            title="https://developer.wordpress.org/"
+            >WordPress.org Code Reference</a
+          >. You can also
+          <a
+            class="page-link"
+            href="https://developer.wordpress.org/reference/functions/get_option"
+            title="https://developer.wordpress.org/reference/functions/get_option"
+            >open this article in your browser</a
+          >.
+        </p>
+        <h1
+          style="margin-bottom: 40px"
+          class="wp-block-wporg-code-reference-title"
+        >
+          get_option( <span class="arg-type">string</span>&nbsp;<span
+            class="arg-name"
+            >$option</span
+          >, <span class="arg-type">mixed</span>&nbsp;<span class="arg-name"
+            >$default_value</span
+          >&nbsp;=&nbsp;<span class="arg-default">false</span>&nbsp;):
+          <span class="return-type">mixed</span>
+        </h1>
+
+        <div
+          class="wp-block-wporg-sidebar-container is-layout-flow wp-block-wporg-sidebar-container-is-layout-flow"
+          data-breakpoint="1300px"
+        >
+          <div class="wp-block-wporg-table-of-contents">
+            <div class="wporg-table-of-contents__header">
+              <h2
+                class="wp-block-heading has-inter-font-family has-normal-font-size"
+                style="
+                  margin-top: 0;
+                  margin-bottom: 0;
+                  font-style: normal;
+                  font-weight: 400;
+                "
+              >
+                In this article
+              </h2>
+              <button
+                type="button"
+                class="wporg-table-of-contents__toggle"
+                aria-expanded="false"
+              >
+                <span class="screen-reader-text">Table of Contents</span>
+              </button>
+            </div>
+            <ul class="wporg-table-of-contents__list">
+              <li>
+                <a href="#description" title="#description">Description</a>
+              </li>
+              <li><a href="#parameters" title="#parameters">Parameters</a></li>
+              <li><a href="#return" title="#return">Return</a></li>
+              <li>
+                <a href="#more-information" title="#more-information"
+                  >More Information</a
+                >
+              </li>
+              <li><a href="#source" title="#source">Source</a></li>
+              <li><a href="#hooks" title="#hooks">Hooks</a></li>
+              <li><a href="#related" title="#related">Related</a></li>
+              <li><a href="#changelog" title="#changelog">Changelog</a></li>
+              <li>
+                <a
+                  href="#user-contributed-notes"
+                  title="#user-contributed-notes"
+                  >User Contributed Notes</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <p class="has-small-font-size is-link-to-top">
+            <a href="#wp--skip-link--target" title="#wp--skip-link--target"
+              ><span aria-hidden="true" class="wp-exclude-emoji">↑</span> Back
+              to top</a
+            >
+          </p>
+        </div>
+
+        <div
+          class="entry-content wp-block-post-content is-layout-flow wp-container-core-post-content-is-layout-1 wp-block-post-content-is-layout-flow"
+        >
+          <section class="wp-block-wporg-code-reference-summary">
+            <p>Retrieves an option value based on an option name.</p>
+          </section>
+          <section class="wp-block-wporg-code-reference-description">
+            <h2
+              id="description"
+              class="is-toc-heading wp-block-heading has-heading-5-font-size"
+              tabindex="-1"
+            >
+              <a href="#description" title="#description">Description</a
+              ><a
+                class="top-link"
+                href="#top"
+                tittle="Scroll back to the top of the page"
+                title="#top"
+                >↑ Back to top</a
+              >
+            </h2>
+            <p>
+              If the option does not exist, and a default value is not provided,
+              boolean false is returned. This could be used to check whether you
+              need to initialize an option during installation of a plugin,
+              however that can be done better by using
+              <a
+                href="https://developer.wordpress.org/reference/functions/add_option/"
+                rel="function"
+                title="https://developer.wordpress.org/reference/functions/add_option/"
+                >add_option()</a
+              >
+              which will not overwrite existing options.
+            </p>
+            <p>
+              Not initializing an option and using boolean <code>false</code> as
+              a return value is a bad practice as it triggers an additional
+              database query.
+            </p>
+            <p>
+              The type of the returned value can be different from the type that
+              was passed when saving or updating the option. If the option value
+              was serialized, then it will be unserialized when it is returned.
+              In this case the type will be the same. For example, storing a
+              non-scalar value like an array will return the same array.
+            </p>
+            <p>
+              In most cases non-string scalar and null values will be converted
+              and returned as string equivalents.
+            </p>
+            <p>Exceptions:</p>
+            <ol>
+              <li>
+                When the option has not been saved in the database, the
+                <code>$default_value</code> value is returned if provided. If
+                not, boolean <code>false</code> is returned.
+              </li>
+              <li>
+                When one of the Options API filters is used:
+                <a
+                  href="https://developer.wordpress.org/reference/hooks/pre_option_option/"
+                  title="https://developer.wordpress.org/reference/hooks/pre_option_option/"
+                  >‘pre_option_$option’</a
+                >,
+                <a
+                  href="https://developer.wordpress.org/reference/hooks/default_option_option/"
+                  title="https://developer.wordpress.org/reference/hooks/default_option_option/"
+                  >‘default_option_$option’</a
+                >, or
+                <a
+                  href="https://developer.wordpress.org/reference/hooks/option_option/"
+                  title="https://developer.wordpress.org/reference/hooks/option_option/"
+                  >‘option_$option’</a
+                >, the returned value may not match the expected type.
+              </li>
+              <li>
+                When the option has just been saved in the database, and
+                <a
+                  href="https://developer.wordpress.org/reference/functions/get_option/"
+                  rel="function"
+                  title="https://developer.wordpress.org/reference/functions/get_option/"
+                  >get_option()</a
+                >
+                is used right after, non-string scalar and null values are not
+                converted to string equivalents and the original type is
+                returned.
+              </li>
+            </ol>
+            <p>Examples:</p>
+            <p>
+              When adding options like this:
+              <code>add_option( 'my_option_name', 'value' )</code> and then
+              retrieving them with <code>get_option( 'my_option_name' )</code>,
+              the returned values will be:
+            </p>
+            <ul>
+              <li><code>false</code> returns <code>string(0) ""</code></li>
+              <li><code>true</code> returns <code>string(1) "1"</code></li>
+              <li><code>0</code> returns <code>string(1) "0"</code></li>
+              <li><code>1</code> returns <code>string(1) "1"</code></li>
+              <li><code>'0'</code> returns <code>string(1) "0"</code></li>
+              <li><code>'1'</code> returns <code>string(1) "1"</code></li>
+              <li><code>null</code> returns <code>string(0) ""</code></li>
+            </ul>
+            <p>
+              When adding options with non-scalar values like
+              <code>add_option( 'my_array', array( false, 'str', null ) )</code
+              >, the returned value will be identical to the original as it is
+              serialized before saving it in the database:
+            </p>
+            <pre
+              class="wp-block-code"
+            ><code lang="php" class="language-php line-numbers">array(3) {
+    [0] =&gt; bool(false)
+    [1] =&gt; string(3) "str"
+    [2] =&gt; NULL
+}</code></pre>
+          </section>
+          <section class="wp-block-wporg-code-reference-parameters">
+            <h2
+              id="parameters"
+              class="is-toc-heading wp-block-heading has-heading-5-font-size"
+              tabindex="-1"
+            >
+              <a href="#parameters" title="#parameters">Parameters</a
+              ><a
+                class="top-link"
+                href="#top"
+                tittle="Scroll back to the top of the page"
+                title="#top"
+                >↑ Back to top</a
+              >
+            </h2>
+            <dl>
+              <dt>
+                <code>$option</code
+                ><span class="type"><span class="string">string</span></span
+                ><span class="required">required</span>
+              </dt>
+              <dd>
+                <div class="desc">
+                  <span class="description"
+                    >Name of the option to retrieve. Expected to not be
+                    SQL-escaped.</span
+                  >
+                </div>
+              </dd>
+              <dt>
+                <code>$default_value</code
+                ><span class="type"><span class="mixed">mixed</span></span
+                ><span class="required">optional</span>
+              </dt>
+              <dd>
+                <div class="desc">
+                  <span class="description"
+                    >Default value to return if the option does not exist.</span
+                  >
+                </div>
+                <p class="default">Default:<code>false</code></p>
+              </dd>
+            </dl>
+          </section>
+          <section
+            class="wporg-has-embedded-code wp-block-wporg-code-reference-return-value"
+          >
+            <h2
+              id="return"
+              class="is-toc-heading wp-block-heading has-heading-5-font-size"
+              tabindex="-1"
+            >
+              <a href="#return" title="#return">Return</a
+              ><a
+                class="top-link"
+                href="#top"
+                tittle="Scroll back to the top of the page"
+                title="#top"
+                >↑ Back to top</a
+              >
+            </h2>
+            <span class="return-type">mixed</span> Value of the option. A value
+            of any type may be returned, including scalar (string, boolean,
+            float, integer), null, array, object.<br />
+            Scalar and null values will be returned as strings as long as they
+            originate from a database stored option value. If there is no option
+            in the database, boolean <code>false</code> is returned.
+          </section>
+          <section
+            class="wporg-has-embedded-code wp-block-wporg-code-reference-explanation"
+          >
+            <h2
+              id="more-information"
+              class="is-toc-heading wp-block-heading has-heading-5-font-size"
+              tabindex="-1"
+            >
+              <a href="#more-information" title="#more-information"
+                >More Information</a
+              ><a
+                class="top-link"
+                href="#top"
+                tittle="Scroll back to the top of the page"
+                title="#top"
+                >↑ Back to top</a
+              >
+            </h2>
+            <p>A concise list of commonly-used options is below.</p>
+
+            <ul>
+              <li>
+                <code>'admin_email'</code> – E-mail address of blog
+                administrator.
+              </li>
+
+              <li>
+                <code>'blogname'</code> – Weblog title; set in General Settings.
+              </li>
+
+              <li>
+                <code>'blogdescription'</code> – Tagline for your blog; set in
+                General Settings.
+              </li>
+
+              <li>
+                <code>'blog_charset'</code> – Character encoding for your blog;
+                set in Reading Settings.
+              </li>
+
+              <li>
+                <code>'date_format'</code> – Default date format; set in General
+                Settings.
+              </li>
+
+              <li>
+                <code>'default_category'</code> – Default post category; set in
+                Writing Settings.
+              </li>
+
+              <li>
+                <code>'home'</code> – The blog’s home web address; set in
+                General Settings.
+              </li>
+
+              <li>
+                <code>'posts_per_page'</code> – Maximum number of posts to show
+                on a page; set in Reading Settings.
+              </li>
+
+              <li>
+                <code>'posts_per_rss'</code> – Maximum number of most recent
+                posts to show in the syndication feed; set in Reading Settings.
+              </li>
+
+              <li>
+                <code>'siteurl'</code> – WordPress web address; set in General
+                Settings. Warning: This is not the same as
+                <code>get_bloginfo( 'url' )</code> (which will return the
+                homepage url), but as get_bloginfo( ‘wpurl’ ).
+              </li>
+
+              <li><code>'template'</code> – The current theme’s name.</li>
+
+              <li>
+                <code>'start_of_week'</code> – Day of week calendar should start
+                on; set in General Settings.
+              </li>
+
+              <li>
+                <code>'upload_path'</code> – Default upload location; set in
+                Media Settings.
+              </li>
+
+              <li>
+                <code>'users_can_register'</code> – Whether users can register;
+                set in General Settings.
+              </li>
+            </ul>
+
+            <p>
+              There are many more options available, a lot of which depend on
+              what plugins you have installed.
+            </p>
+          </section>
+
+          <section class="wp-block-wporg-code-reference-source">
+            <h2
+              id="source"
+              class="is-toc-heading wp-block-heading has-heading-5-font-size"
+              tabindex="-1"
+            >
+              <a href="#source" title="#source">Source</a
+              ><a
+                class="top-link"
+                href="#top"
+                tittle="Scroll back to the top of the page"
+                title="#top"
+                >↑ Back to top</a
+              >
+            </h2>
+            <pre
+              class="wp-block-code"
+              data-start="78"
+              aria-label="Function source code"
+            ><code id="wporg-source-code" lang="php" class="language-php line-numbers">function get_option( $option, $default_value = false ) {
+	global $wpdb;
+
+	if ( is_scalar( $option ) ) {
+		$option = trim( $option );
+	}
+
+	if ( empty( $option ) ) {
+		return false;
+	}
+
+	/*
+	 * Until a proper _deprecated_option() function can be introduced,
+	 * redirect requests to deprecated keys to the new, correct ones.
+	 */
+	$deprecated_keys = array(
+		'blacklist_keys'    =&gt; 'disallowed_keys',
+		'comment_whitelist' =&gt; 'comment_previously_approved',
+	);
+
+	if ( isset( $deprecated_keys[ $option ] ) &amp;&amp; ! wp_installing() ) {
+		_deprecated_argument(
+			__FUNCTION__,
+			'5.5.0',
+			sprintf(
+				/* translators: 1: Deprecated option key, 2: New option key. */
+				__( 'The "%1$s" option key has been renamed to "%2$s".' ),
+				$option,
+				$deprecated_keys[ $option ]
+			)
+		);
+		return get_option( $deprecated_keys[ $option ], $default_value );
+	}
+
+	/**
+	 * Filters the value of an existing option before it is retrieved.
+	 *
+	 * The dynamic portion of the hook name, `$option`, refers to the option name.
+	 *
+	 * Returning a value other than false from the filter will short-circuit retrieval
+	 * and return that value instead.
+	 *
+	 * @since 1.5.0
+	 * @since 4.4.0 The `$option` parameter was added.
+	 * @since 4.9.0 The `$default_value` parameter was added.
+	 *
+	 * @param mixed  $pre_option    The value to return instead of the option value. This differs from
+	 *                              `$default_value`, which is used as the fallback value in the event
+	 *                              the option doesn't exist elsewhere in get_option().
+	 *                              Default false (to skip past the short-circuit).
+	 * @param string $option        Option name.
+	 * @param mixed  $default_value The fallback value to return if the option does not exist.
+	 *                              Default false.
+	 */
+	$pre = apply_filters( "pre_option_{$option}", false, $option, $default_value );
+
+	/**
+	 * Filters the value of all existing options before it is retrieved.
+	 *
+	 * Returning a truthy value from the filter will effectively short-circuit retrieval
+	 * and return the passed value instead.
+	 *
+	 * @since 6.1.0
+	 *
+	 * @param mixed  $pre_option    The value to return instead of the option value. This differs from
+	 *                              `$default_value`, which is used as the fallback value in the event
+	 *                              the option doesn't exist elsewhere in get_option().
+	 *                              Default false (to skip past the short-circuit).
+	 * @param string $option        Name of the option.
+	 * @param mixed  $default_value The fallback value to return if the option does not exist.
+	 *                              Default false.
+	 */
+	$pre = apply_filters( 'pre_option', $pre, $option, $default_value );
+
+	if ( false !== $pre ) {
+		return $pre;
+	}
+
+	if ( defined( 'WP_SETUP_CONFIG' ) ) {
+		return false;
+	}
+
+	// Distinguish between `false` as a default, and not passing one.
+	$passed_default = func_num_args() &gt; 1;
+
+	if ( ! wp_installing() ) {
+		$alloptions = wp_load_alloptions();
+
+		if ( isset( $alloptions[ $option ] ) ) {
+			$value = $alloptions[ $option ];
+		} else {
+			$value = wp_cache_get( $option, 'options' );
+
+			if ( false === $value ) {
+				// Prevent non-existent options from triggering multiple queries.
+				$notoptions = wp_cache_get( 'notoptions', 'options' );
+
+				// Prevent non-existent `notoptions` key from triggering multiple key lookups.
+				if ( ! is_array( $notoptions ) ) {
+					$notoptions = array();
+					wp_cache_set( 'notoptions', $notoptions, 'options' );
+				} elseif ( isset( $notoptions[ $option ] ) ) {
+					/**
+					 * Filters the default value for an option.
+					 *
+					 * The dynamic portion of the hook name, `$option`, refers to the option name.
+					 *
+					 * @since 3.4.0
+					 * @since 4.4.0 The `$option` parameter was added.
+					 * @since 4.7.0 The `$passed_default` parameter was added to distinguish between a `false` value and the default parameter value.
+					 *
+					 * @param mixed  $default_value  The default value to return if the option does not exist
+					 *                               in the database.
+					 * @param string $option         Option name.
+					 * @param bool   $passed_default Was `get_option()` passed a default value?
+					 */
+					return apply_filters( "default_option_{$option}", $default_value, $option, $passed_default );
+				}
+
+				$row = $wpdb-&gt;get_row( $wpdb-&gt;prepare( "SELECT option_value FROM $wpdb-&gt;options WHERE option_name = %s LIMIT 1", $option ) );
+
+				// Has to be get_row() instead of get_var() because of funkiness with 0, false, null values.
+				if ( is_object( $row ) ) {
+					$value = $row-&gt;option_value;
+					wp_cache_add( $option, $value, 'options' );
+				} else { // Option does not exist, so we must cache its non-existence.
+					$notoptions[ $option ] = true;
+					wp_cache_set( 'notoptions', $notoptions, 'options' );
+
+					/** This filter is documented in wp-includes/option.php */
+					return apply_filters( "default_option_{$option}", $default_value, $option, $passed_default );
+				}
+			}
+		}
+	} else {
+		$suppress = $wpdb-&gt;suppress_errors();
+		$row      = $wpdb-&gt;get_row( $wpdb-&gt;prepare( "SELECT option_value FROM $wpdb-&gt;options WHERE option_name = %s LIMIT 1", $option ) );
+		$wpdb-&gt;suppress_errors( $suppress );
+
+		if ( is_object( $row ) ) {
+			$value = $row-&gt;option_value;
+		} else {
+			/** This filter is documented in wp-includes/option.php */
+			return apply_filters( "default_option_{$option}", $default_value, $option, $passed_default );
+		}
+	}
+
+	// If home is not set, use siteurl.
+	if ( 'home' === $option &amp;&amp; '' === $value ) {
+		return get_option( 'siteurl' );
+	}
+
+	if ( in_array( $option, array( 'siteurl', 'home', 'category_base', 'tag_base' ), true ) ) {
+		$value = untrailingslashit( $value );
+	}
+
+	/**
+	 * Filters the value of an existing option.
+	 *
+	 * The dynamic portion of the hook name, `$option`, refers to the option name.
+	 *
+	 * @since 1.5.0 As 'option_' . $setting
+	 * @since 3.0.0
+	 * @since 4.4.0 The `$option` parameter was added.
+	 *
+	 * @param mixed  $value  Value of the option. If stored serialized, it will be
+	 *                       unserialized prior to being returned.
+	 * @param string $option Option name.
+	 */
+	return apply_filters( "option_{$option}", maybe_unserialize( $value ), $option );
+}
+</code></pre>
+            <p class="wporg-dot-link-list">
+              <a
+                href="https://developer.wordpress.org/reference/files/wp-includes/option.php/"
+                title="https://developer.wordpress.org/reference/files/wp-includes/option.php/"
+                >View all references</a
+              >
+              <a
+                href="https://core.trac.wordpress.org/browser/tags/6.5/src/wp-includes/option.php#L78"
+                title="https://core.trac.wordpress.org/browser/tags/6.5/src/wp-includes/option.php#L78"
+                >View on Trac</a
+              >
+              <a
+                href="https://github.com/WordPress/wordpress-develop/blob/6.5/src/wp-includes/option.php#L78-L248"
+                title="https://github.com/WordPress/wordpress-develop/blob/6.5/src/wp-includes/option.php#L78-L248"
+                >View on GitHub</a
+              >
+            </p>
+          </section>
+          <section class="wp-block-wporg-code-reference-hooks">
+            <h2
+              id="hooks"
+              class="is-toc-heading wp-block-heading has-heading-5-font-size"
+              tabindex="-1"
+            >
+              <a href="#hooks" title="#hooks">Hooks</a
+              ><a
+                class="top-link"
+                href="#top"
+                tittle="Scroll back to the top of the page"
+                title="#top"
+                >↑ Back to top</a
+              >
+            </h2>
+            <dl>
+              <dt
+                class="wp-block-wporg-code-reference-title has-normal-font-size"
+              >
+                <a
+                  href="https://developer.wordpress.org/reference/hooks/default_option_option/"
+                  title="https://developer.wordpress.org/reference/hooks/default_option_option/"
+                  ><span class="hook-func">apply_filters</span>(
+                  “default_option_{$option}”,
+                  <nobr
+                    ><span class="arg-type">mixed</span>
+                    <span class="arg-name">$default_value</span></nobr
+                  >,
+                  <nobr
+                    ><span class="arg-type">string</span>
+                    <span class="arg-name">$option</span></nobr
+                  >,
+                  <nobr
+                    ><span class="arg-type">bool</span>
+                    <span class="arg-name">$passed_default</span></nobr
+                  >&nbsp;)</a
+                >
+              </dt>
+              <dd><p>Filters the default value for an option.</p></dd>
+              <dt
+                class="wp-block-wporg-code-reference-title has-normal-font-size"
+              >
+                <a
+                  href="https://developer.wordpress.org/reference/hooks/option_option/"
+                  title="https://developer.wordpress.org/reference/hooks/option_option/"
+                  ><span class="hook-func">apply_filters</span>(
+                  “option_{$option}”,
+                  <nobr
+                    ><span class="arg-type">mixed</span>
+                    <span class="arg-name">$value</span></nobr
+                  >,
+                  <nobr
+                    ><span class="arg-type">string</span>
+                    <span class="arg-name">$option</span></nobr
+                  >&nbsp;)</a
+                >
+              </dt>
+              <dd><p>Filters the value of an existing option.</p></dd>
+              <dt
+                class="wp-block-wporg-code-reference-title has-normal-font-size"
+              >
+                <a
+                  href="https://developer.wordpress.org/reference/hooks/pre_option/"
+                  title="https://developer.wordpress.org/reference/hooks/pre_option/"
+                  ><span class="hook-func">apply_filters</span>( ‘pre_option’,
+                  <nobr
+                    ><span class="arg-type">mixed</span>
+                    <span class="arg-name">$pre_option</span></nobr
+                  >,
+                  <nobr
+                    ><span class="arg-type">string</span>
+                    <span class="arg-name">$option</span></nobr
+                  >,
+                  <nobr
+                    ><span class="arg-type">mixed</span>
+                    <span class="arg-name">$default_value</span></nobr
+                  >&nbsp;)</a
+                >
+              </dt>
+              <dd>
+                <p>
+                  Filters the value of all existing options before it is
+                  retrieved.
+                </p>
+              </dd>
+              <dt
+                class="wp-block-wporg-code-reference-title has-normal-font-size"
+              >
+                <a
+                  href="https://developer.wordpress.org/reference/hooks/pre_option_option/"
+                  title="https://developer.wordpress.org/reference/hooks/pre_option_option/"
+                  ><span class="hook-func">apply_filters</span>(
+                  “pre_option_{$option}”,
+                  <nobr
+                    ><span class="arg-type">mixed</span>
+                    <span class="arg-name">$pre_option</span></nobr
+                  >,
+                  <nobr
+                    ><span class="arg-type">string</span>
+                    <span class="arg-name">$option</span></nobr
+                  >,
+                  <nobr
+                    ><span class="arg-type">mixed</span>
+                    <span class="arg-name">$default_value</span></nobr
+                  >&nbsp;)</a
+                >
+              </dt>
+              <dd>
+                <p>
+                  Filters the value of an existing option before it is
+                  retrieved.
+                </p>
+              </dd>
+            </dl>
+          </section>
+          <section class="wp-block-wporg-code-reference-related">
+            <h2
+              id="related"
+              class="is-toc-heading wp-block-heading has-heading-5-font-size"
+              tabindex="-1"
+            >
+              <a href="#related" title="#related">Related</a
+              ><a
+                class="top-link"
+                href="#top"
+                tittle="Scroll back to the top of the page"
+                title="#top"
+                >↑ Back to top</a
+              >
+            </h2>
+            <section
+              style="margin-top: var(--wp--preset--spacing--20)"
+              class="wp-block-wporg-code-table"
+              id="uses"
+            >
+              <figure class="wp-block-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Uses</th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="">
+                      <td>
+                        <a
+                          href="https://developer.wordpress.org/reference/functions/wp_installing/"
+                          title="https://developer.wordpress.org/reference/functions/wp_installing/"
+                          >wp_installing()</a
+                        ><code>wp-includes/load.php</code>
+                      </td>
+                      <td>
+                        <p>
+                          Checks or sets whether WordPress is in “installation”
+                          mode.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td>
+                        <a
+                          href="https://developer.wordpress.org/reference/functions/wp_cache_set/"
+                          title="https://developer.wordpress.org/reference/functions/wp_cache_set/"
+                          >wp_cache_set()</a
+                        ><code>wp-includes/cache.php</code>
+                      </td>
+                      <td><p>Saves the data to the cache.</p></td>
+                    </tr>
+                    <tr class="">
+                      <td>
+                        <a
+                          href="https://developer.wordpress.org/reference/functions/wp_cache_add/"
+                          title="https://developer.wordpress.org/reference/functions/wp_cache_add/"
+                          >wp_cache_add()</a
+                        ><code>wp-includes/cache.php</code>
+                      </td>
+                      <td>
+                        <p>
+                          Adds data to the cache, if the cache key doesn’t
+                          already exist.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td>
+                        <a
+                          href="https://developer.wordpress.org/reference/functions/untrailingslashit/"
+                          title="https://developer.wordpress.org/reference/functions/untrailingslashit/"
+                          >untrailingslashit()</a
+                        ><code>wp-includes/formatting.php</code>
+                      </td>
+                      <td>
+                        <p>
+                          Removes trailing forward slashes and backslashes if
+                          they exist.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td>
+                        <a
+                          href="https://developer.wordpress.org/reference/functions/maybe_unserialize/"
+                          title="https://developer.wordpress.org/reference/functions/maybe_unserialize/"
+                          >maybe_unserialize()</a
+                        ><code>wp-includes/functions.php</code>
+                      </td>
+                      <td>
+                        <p>Unserializes data only if it was serialized.</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="more-rows">
+                  <a
+                    href="https://developer.wordpress.org/reference/functions/get_option#related"
+                    title="https://developer.wordpress.org/reference/functions/get_option#related"
+                    >Check documentation page to see 10 more rows</a
+                  >
+                </p>
+              </figure>
+              <a class="wp-block-wporg-code-table-show-more" href="#" title="#"
+                >Show 9 more</a
+              ><a class="wp-block-wporg-code-table-show-less" href="#" title="#"
+                >Show less</a
+              >
+            </section>
+            <section
+              style="margin-top: var(--wp--preset--spacing--20)"
+              class="wp-block-wporg-code-table"
+              id="used-by"
+            >
+              <figure class="wp-block-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Used by</th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="">
+                      <td>
+                        <a
+                          href="https://developer.wordpress.org/reference/functions/wp_get_plugin_action_button/"
+                          title="https://developer.wordpress.org/reference/functions/wp_get_plugin_action_button/"
+                          >wp_get_plugin_action_button()</a
+                        ><code>wp-admin/includes/plugin-install.php</code>
+                      </td>
+                      <td>
+                        <p>
+                          Gets the markup for the plugin install action button.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td>
+                        <a
+                          href="https://developer.wordpress.org/reference/functions/get_options/"
+                          title="https://developer.wordpress.org/reference/functions/get_options/"
+                          >get_options()</a
+                        ><code>wp-includes/option.php</code>
+                      </td>
+                      <td><p>Retrieves multiple options.</p></td>
+                    </tr>
+                    <tr class="">
+                      <td>
+                        <a
+                          href="https://developer.wordpress.org/reference/functions/wp_delete_all_temp_backups/"
+                          title="https://developer.wordpress.org/reference/functions/wp_delete_all_temp_backups/"
+                          >wp_delete_all_temp_backups()</a
+                        ><code>wp-includes/update.php</code>
+                      </td>
+                      <td>
+                        <p>
+                          Schedules the removal of all contents in the temporary
+                          backup directory.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr class="">
+                      <td>
+                        <a
+                          href="https://developer.wordpress.org/reference/classes/ixr_server/output/"
+                          title="https://developer.wordpress.org/reference/classes/ixr_server/output/"
+                          >IXR_Server::output()</a
+                        ><code>wp-includes/IXR/class-IXR-server.php</code>
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr class="">
+                      <td>
+                        <a
+                          href="https://developer.wordpress.org/reference/functions/_resolve_home_block_template/"
+                          title="https://developer.wordpress.org/reference/functions/_resolve_home_block_template/"
+                          >_resolve_home_block_template()</a
+                        ><code>wp-includes/deprecated.php</code>
+                      </td>
+                      <td>
+                        <p>
+                          Returns the correct template for the site’s home page.
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="more-rows">
+                  <a
+                    href="https://developer.wordpress.org/reference/functions/get_option#related"
+                    title="https://developer.wordpress.org/reference/functions/get_option#related"
+                    >Check documentation page to see 345 more rows</a
+                  >
+                </p>
+              </figure>
+              <a class="wp-block-wporg-code-table-show-more" href="#" title="#"
+                >Show 344 more</a
+              ><a class="wp-block-wporg-code-table-show-less" href="#" title="#"
+                >Show less</a
+              >
+            </section>
+          </section>
+          <section class="wp-block-wporg-code-reference-changelog">
+            <h2
+              id="changelog"
+              class="is-toc-heading wp-block-heading has-heading-5-font-size"
+              tabindex="-1"
+            >
+              <a href="#changelog" title="#changelog">Changelog</a
+              ><a
+                class="top-link"
+                href="#top"
+                tittle="Scroll back to the top of the page"
+                title="#top"
+                >↑ Back to top</a
+              >
+            </h2>
+            <section
+              style="margin-top: var(--wp--preset--spacing--20)"
+              class="wp-block-wporg-code-table"
+            >
+              <figure class="wp-block-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Version</th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="">
+                      <td>
+                        <a
+                          href="https://developer.wordpress.org/reference/since/1.5.0/"
+                          title="https://developer.wordpress.org/reference/since/1.5.0/"
+                          >1.5.0</a
+                        >
+                      </td>
+                      <td>Introduced.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </figure>
+            </section>
+          </section>
+          <section class="wp-block-wporg-code-reference-comments">
+            <h2
+              id="user-contributed-notes"
+              class="is-toc-heading wp-block-heading"
+              tabindex="-1"
+            >
+              <a href="#user-contributed-notes" title="#user-contributed-notes"
+                >User Contributed Notes</a
+              ><a
+                class="top-link"
+                href="#top"
+                tittle="Scroll back to the top of the page"
+                title="#top"
+                >↑ Back to top</a
+              >
+            </h2>
+            <ol class="comment-list">
+              <li
+                id="comment-410"
+                data-comment-id="410"
+                class="comment byuser comment-author-codex even thread-even depth-1"
+              >
+                <article id="div-comment-410" class="comment-body">
+                  <a
+                    href="#comment-content-410"
+                    class="screen-reader-text"
+                    title="#comment-content-410"
+                    >Skip to note 15 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/codex/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/codex/"
+                          >Codex</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-410"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-410"
+                      >
+                        <time datetime="2015-07-02T06:33:32+00:00">
+                          9 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="65af177e3e"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="410"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-410"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span
+                        class="user-note-voting-count"
+                        title="91% like this"
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >9</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="410"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-410"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-410"
+                  >
+                    <p><strong>Handling of non-existing options</strong></p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php line-numbers">$no_exists_value = get_option( 'no_exists_value' );
+var_dump( $no_exists_value ); /* outputs false */
+
+$no_exists_value = get_option( 'no_exists_value', 'default_value' );
+var_dump( $no_exists_value ); /* outputs 'default_value' */</code></pre>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-410"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-411"
+                data-comment-id="411"
+                class="comment byuser comment-author-codex odd alt thread-odd thread-alt depth-1"
+              >
+                <article id="div-comment-411" class="comment-body">
+                  <a
+                    href="#comment-content-411"
+                    class="screen-reader-text"
+                    title="#comment-content-411"
+                    >Skip to note 16 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/codex/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/codex/"
+                          >Codex</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-411"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-411"
+                      >
+                        <time datetime="2015-07-02T06:34:24+00:00">
+                          9 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="fe46c44888"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="411"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-411"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span
+                        class="user-note-voting-count"
+                        title="83% like this"
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >4</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="411"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-411"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-411"
+                  >
+                    <p>
+                      <strong>Show Blog Title</strong><br />
+                      Displays your blog’s title in a
+                      <code>&lt;h1&gt;</code> tag.
+                    </p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">&lt;h1&gt;&lt;?php echo get_option( 'blogname' ); ?&gt;&lt;/h1&gt;</code></pre>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-411"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-412"
+                data-comment-id="412"
+                class="comment byuser comment-author-codex even thread-even depth-1"
+              >
+                <article id="div-comment-412" class="comment-body">
+                  <a
+                    href="#comment-content-412"
+                    class="screen-reader-text"
+                    title="#comment-content-412"
+                    >Skip to note 17 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/codex/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/codex/"
+                          >Codex</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-412"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-412"
+                      >
+                        <time datetime="2015-07-02T06:34:58+00:00">
+                          9 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="046ff8f836"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="412"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-412"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span
+                        class="user-note-voting-count"
+                        title="100% like this"
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >4</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="412"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-412"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-412"
+                  >
+                    <p>
+                      <strong>Show Character Set</strong><br />
+                      Displays the character set your blog is using (ex: UTF-8)
+                    </p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">&lt;p&gt;&lt;?php echo esc_html( sprintf( __( 'Character set: %s', 'textdomain' ), get_option( 'blog_charset' ) ) ); ?&gt;&lt;/p&gt;</code></pre>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-412"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-413"
+                data-comment-id="413"
+                class="comment byuser comment-author-codex odd alt thread-odd thread-alt depth-1"
+              >
+                <article id="div-comment-413" class="comment-body">
+                  <a
+                    href="#comment-content-413"
+                    class="screen-reader-text"
+                    title="#comment-content-413"
+                    >Skip to note 18 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/codex/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/codex/"
+                          >Codex</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-413"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-413"
+                      >
+                        <time datetime="2015-07-02T06:35:28+00:00">
+                          9 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="10fcd0def3"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="413"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-413"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span
+                        class="user-note-voting-count"
+                        title="100% like this"
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >4</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="413"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-413"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-413"
+                  >
+                    <p>
+                      <strong>Retrieve Administrator E-mail</strong><br />
+                      Retrieve the e-mail of the blog administrator, storing it
+                      in a variable.
+                    </p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">&lt;?php $admin_email = get_option( 'admin_email' ); ?&gt;</code></pre>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-413"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-2345"
+                data-comment-id="2345"
+                class="comment byuser comment-author-ptasker even thread-even depth-1"
+              >
+                <article id="div-comment-2345" class="comment-body">
+                  <a
+                    href="#comment-content-2345"
+                    class="screen-reader-text"
+                    title="#comment-content-2345"
+                    >Skip to note 19 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/ptasker/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/ptasker/"
+                          >ptasker</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-2345"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-2345"
+                      >
+                        <time datetime="2017-08-31T17:59:03+00:00">
+                          7 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="2e90c28774"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="2345"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-2345"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span
+                        class="user-note-voting-count"
+                        title="100% like this"
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >4</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="2345"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-2345"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-2345"
+                  >
+                    <p>
+                      A quick tip that the output of
+                      <code>get_option()</code> is filterable:
+                    </p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">return apply_filters( "option_{$option}", maybe_unserialize( $value ), $option );</code></pre>
+                    <p>
+                      So you can change the output of
+                      <code>get_option()</code> at run time.
+                    </p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php line-numbers"> //Outputs an array of all plugins
+ var_dump( get_option('active_plugins') );
+
+ add_filter( 'option_active_plugins', function( $plugins ){
+	return [];
+});
+
+//Outputs an empty array
+var_dump( get_option('active_plugins') );</code></pre>
+                    <p>Helpful for disabling specific plugins when required.</p>
+                    <p>
+                      <a
+                        href="https://developer.wordpress.org/reference/hooks/option_option/"
+                        rel="ugc"
+                        title="https://developer.wordpress.org/reference/hooks/option_option/"
+                        >https://developer.wordpress.org/reference/hooks/option_option/</a
+                      >
+                    </p>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-2345"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-3230"
+                data-comment-id="3230"
+                class="comment byuser comment-author-seedsca odd alt thread-odd thread-alt depth-1"
+              >
+                <article id="div-comment-3230" class="comment-body">
+                  <a
+                    href="#comment-content-3230"
+                    class="screen-reader-text"
+                    title="#comment-content-3230"
+                    >Skip to note 20 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/seedsca/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/seedsca/"
+                          >Sergio Scabuzzo</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-3230"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-3230"
+                      >
+                        <time datetime="2019-06-05T06:11:19+00:00">
+                          5 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="25daab2772"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="3230"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-3230"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span
+                        class="user-note-voting-count"
+                        title="100% like this"
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >3</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="3230"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-3230"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-3230"
+                  >
+                    <p>
+                      <strong>Check if option is set to avoid warnings.</strong
+                      ><br />
+                      Was getting Illegal Offset warnings when the checkbox was
+                      not selected on a plugin’s option page.<br />
+                      Adding isset() inside
+                      <a
+                        href="https://developer.wordpress.org/reference/functions/checked/"
+                        rel="function"
+                        title="https://developer.wordpress.org/reference/functions/checked/"
+                        >checked()</a
+                      >
+                      sorted it all out.
+                    </p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php line-numbers">function comment_author_url_render() {
+
+	$options = get_option( 'plugin_settings' );
+	?&gt;
+	&lt;input type='checkbox' name='plugin_settings[setting]' &lt;?php checked( isset( $options['setting'] ) ); ?&gt; value='1'&gt;
+
+	&lt;?php
+
+}</code></pre>
+                    <p>Hope this helps somebody else out.</p>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-3230"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-2641"
+                data-comment-id="2641"
+                class="comment byuser comment-author-anuragthn even thread-even depth-1"
+              >
+                <article id="div-comment-2641" class="comment-body">
+                  <a
+                    href="#comment-content-2641"
+                    class="screen-reader-text"
+                    title="#comment-content-2641"
+                    >Skip to note 21 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/anuragthn/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/anuragthn/"
+                          >Anurag soni</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-2641"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-2641"
+                      >
+                        <time datetime="2018-04-10T11:30:38+00:00">
+                          6 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="822557177c"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="2641"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-2641"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span
+                        class="user-note-voting-count"
+                        title="75% like this"
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >2</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="2641"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-2641"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-2641"
+                  >
+                    <p>Just like we use</p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">get_option('date_format')</code></pre>
+                    <p>
+                      to incorporate the date format defined in Settings -&gt;
+                      General,
+                    </p>
+                    <p>We can also use</p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">get_option('time_format')</code></pre>
+                    <p>
+                      to incorporate the time format defined in Settings -&gt;
+                      General.
+                    </p>
+                    <p>for example</p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">&lt;?php the_time(get_option('date_format')); ?&gt;</code></pre>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">&lt;?php the_time(get_option('time_format')); ?&gt;</code></pre>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-2641"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-1986"
+                data-comment-id="1986"
+                class="comment byuser comment-author-ancawonka odd alt thread-odd thread-alt depth-1"
+              >
+                <article id="div-comment-1986" class="comment-body">
+                  <a
+                    href="#comment-content-1986"
+                    class="screen-reader-text"
+                    title="#comment-content-1986"
+                    >Skip to note 22 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/ancawonka/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/ancawonka/"
+                          >ancawonka</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-1986"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-1986"
+                      >
+                        <time datetime="2016-12-22T18:45:57+00:00">
+                          7 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="b8948c2b25"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="1986"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-1986"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span class="user-note-voting-count" title=""
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >0</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="1986"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-1986"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-1986"
+                  >
+                    <p>
+                      If you want to get a network-wide option, use the
+                      get_site_option function instead.
+                      <a
+                        href="https://developer.wordpress.org/reference/functions/get_site_option"
+                        rel="ugc"
+                        title="https://developer.wordpress.org/reference/functions/get_site_option"
+                        >https://developer.wordpress.org/reference/functions/get_site_option</a
+                      >
+                    </p>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-1986"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-2825"
+                data-comment-id="2825"
+                class="comment byuser comment-author-tradesouthwestgmailcom even thread-even depth-1"
+              >
+                <article id="div-comment-2825" class="comment-body">
+                  <a
+                    href="#comment-content-2825"
+                    class="screen-reader-text"
+                    title="#comment-content-2825"
+                    >Skip to note 23 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/tradesouthwestgmailcom/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/tradesouthwestgmailcom/"
+                          >tradesouthwest</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-2825"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-2825"
+                      >
+                        <time datetime="2018-08-19T03:27:23+00:00">
+                          6 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="f6ada03327"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="2825"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-2825"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span class="user-note-voting-count" title=""
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >0</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="2825"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-2825"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-2825"
+                  >
+                    <p>
+                      There is a “long-hand” format for creating option
+                      settings-field parameter in one line that is harder to
+                      read/follow semantically, but provides a single string to
+                      a options setting instead of two strings for every option.
+                    </p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">$wpdevref_text_2 = esc_attr( get_option( 'wpdevref_options' )['wpdevref_text_field_2'] );</code></pre>
+                    <p>
+                      The above returns false, so technically there is no
+                      default to setup unless you require a value.<br />
+                      And there are just a bit less parameter parsing than
+                    </p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">$options = get_option('wpdevref_options');
+$wpdevref_text_2 = (empty($options['wpdevref_text_2'] ))
+                 ? 'Default Text' : $options['wpdevref_text_2']; </code></pre>
+                    <p>Alternatively (if default required):</p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">$wpdevref_text_2 = (empty( get_option( 'wpdevref_options' )['wpdevref_text_field_2']) )
+                 ? 'Default Text' : get_option( 'wpdevref_options' )['wpdevref_text_field_2'];</code></pre>
+                    <p>And for a checkbox in a settings array, try:</p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">'value'   =&gt; get_option('wpdevref_fields')['wpdevref_dashnews_widgetcheck'],
+'checked' =&gt; esc_attr( checked( 1,
+             get_option('wpdevref_fields')['wpdevref_dashnews_widgetcheck'], false ) );</code></pre>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-2825"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-3092"
+                data-comment-id="3092"
+                class="comment byuser comment-author-shadialaghbari odd alt thread-odd thread-alt depth-1"
+              >
+                <article id="div-comment-3092" class="comment-body">
+                  <a
+                    href="#comment-content-3092"
+                    class="screen-reader-text"
+                    title="#comment-content-3092"
+                    >Skip to note 24 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/shadialaghbari/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/shadialaghbari/"
+                          >Shadi G شادي جـ</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-3092"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-3092"
+                      >
+                        <time datetime="2019-03-02T19:24:16+00:00">
+                          5 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="0b899dbec1"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="3092"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-3092"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span class="user-note-voting-count" title=""
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >0</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="3092"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-3092"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-3092"
+                  >
+                    <p>
+                      This is helpful for assigning defaults values to multiple
+                      options:
+                    </p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php line-numbers">/**
+ * Retrieves multiple options values as an associative array based on an option name.
+ * @param string $option_name (Required) Name of option to retrieve.
+ * @param array $defaults (Optional) Default values to return if the option does not exist.
+ */
+function wporg_prfex_get_theme_option( $option_name, $defaults = array() ) {
+  $options = get_option( $option_name );
+  //checking if options exists
+  if ( ! empty( $options ) ) {
+    $it = new MultipleIterator();
+    $it-&gt;attachIterator( new ArrayIterator( $options ) );
+    $it-&gt;attachIterator( new ArrayIterator( $defaults ) );
+
+    foreach ( $it as $setting_name =&gt; $value ) {
+      if ( empty( $value[0] ) ) {
+        $optionsArray[ $setting_name[1] ] = $value[1];
+      } else {
+        $optionsArray[ $setting_name[0] ] = $value[0];
+      }
+    }// end loop
+    return $optionsArray;
+  } else {
+    // if no options then set the defaults
+    $optionsArray = $defaults;
+    return $optionsArray;
+  }
+}</code></pre>
+                    <p>Usage as the following:</p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php line-numbers">$defaults = array(
+      'settings_name1' =&gt; 'rgba(255, 0, 0, 0.7)',
+      'settings_name1' =&gt; 'rgba(31, 200, 219, 0.7)',
+      'settings_name1' =&gt; 'rgba(44, 181, 232, 0.7)'
+    );
+$colors = wporg_prfex_get_theme_option( 'option_name', $defaults );</code></pre>
+                    <p>Displaying the option:</p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">echo $colors['settings_name1'];</code></pre>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-3092"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-3499"
+                data-comment-id="3499"
+                class="comment byuser comment-author-awordpresslife even thread-even depth-1"
+              >
+                <article id="div-comment-3499" class="comment-body">
+                  <a
+                    href="#comment-content-3499"
+                    class="screen-reader-text"
+                    title="#comment-content-3499"
+                    >Skip to note 25 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/awordpresslife/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/awordpresslife/"
+                          >A WP Life</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-3499"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-3499"
+                      >
+                        <time datetime="2019-11-29T09:45:08+00:00">
+                          4 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="3e419b355a"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="3499"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-3499"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span class="user-note-voting-count" title=""
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >0</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="3499"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-3499"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-3499"
+                  >
+                    <p>Simply way to check the option value set or not.</p>
+                    <p>
+                      For Example, I have a plugin version 1.0 that is installed
+                      on the user site. The plugin version is set on the plugin
+                      activation. If I released a new plugin version 2.0 and
+                      need to check the installed plugin version and new apply
+                      changes on the new version update.
+                    </p>
+                    <p>For it, you need to set default value in function:</p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php ">get_option( 'key_name', 'default_value' )</code></pre>
+                    <p>
+                      So, if option value not set or avaiable than default value
+                      assigned to variable.
+                    </p>
+                    <p>Sample code:</p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php line-numbers">$my_plugin_version = get_option('plugin_name_version', '2.0');
+if($my_plugin_version == '1.0') {
+	// do something or apply changes and update the plugin version into option value
+} else {
+	// do nothing
+}</code></pre>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-3499"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-3970"
+                data-comment-id="3970"
+                class="comment byuser comment-author-wordpresssites odd alt thread-odd thread-alt depth-1"
+              >
+                <article id="div-comment-3970" class="comment-body">
+                  <a
+                    href="#comment-content-3970"
+                    class="screen-reader-text"
+                    title="#comment-content-3970"
+                    >Skip to note 26 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/wordpresssites/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/wordpresssites/"
+                          >WP Sites – Brad Dalton</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-3970"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-3970"
+                      >
+                        <time datetime="2020-06-18T12:42:54+00:00">
+                          4 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="23deaeadb7"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="3970"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-3970"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span class="user-note-voting-count" title=""
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >0</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="3970"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-3970"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-3970"
+                  >
+                    <p>
+                      For use with images includes a default image in child
+                      theme folder named default.png and option when adding
+                      image using the customizer.<br />
+                      <code
+                        >$image = get_option( 'genesis-customizer-image',
+                        sprintf( '%s/default.png',
+                        get_stylesheet_directory_uri() ) );</code
+                      >
+                    </p>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-3970"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-6189"
+                data-comment-id="6189"
+                class="comment byuser comment-author-nickelpedes even thread-even depth-1"
+              >
+                <article id="div-comment-6189" class="comment-body">
+                  <a
+                    href="#comment-content-6189"
+                    class="screen-reader-text"
+                    title="#comment-content-6189"
+                    >Skip to note 27 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/nickelpedes/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/nickelpedes/"
+                          >Nick Elpedes</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-6189"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-6189"
+                      >
+                        <time datetime="2022-11-16T15:25:34+00:00">
+                          1 year ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="ab468f53e9"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="6189"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-6189"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span class="user-note-voting-count" title=""
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >0</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="6189"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-6189"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-6189"
+                  >
+                    <p>
+                      Keep in mind that if you use Settings API along with
+                      Options API, the database row for the option will NOT be
+                      created until the setting page form is submitted with an
+                      updated value for that setting.<br />
+                      If a default value is set when registering your settings,
+                      and you try to test if the option exists,
+                      <strong
+                        >if there is no database entry for the option, the
+                        default value set with Settings API will be returned
+                        instead of <code>false</code>.</strong
+                      >
+                      Keep this in mind when writing your code.
+                    </p>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-6189"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+              <li
+                id="comment-2369"
+                data-comment-id="2369"
+                class="comment byuser comment-author-bhvreddy88 odd alt thread-odd thread-alt depth-1 bad-note"
+              >
+                <article id="div-comment-2369" class="comment-body">
+                  <a
+                    href="#comment-content-2369"
+                    class="screen-reader-text"
+                    title="#comment-content-2369"
+                    >Skip to note 28 content</a
+                  >
+                  <header class="comment-meta">
+                    <div class="comment-author vcard">
+                      <span class="comment-author-attribution">
+                        <a
+                          href="https://profiles.wordpress.org/bhvreddy88/"
+                          rel="external nofollow"
+                          class="url"
+                          title="https://profiles.wordpress.org/bhvreddy88/"
+                          >bhvreddy88</a
+                        >
+                      </span>
+                      <a
+                        class="comment-date"
+                        href="https://developer.wordpress.org/reference/functions/get_option/#comment-2369"
+                        title="https://developer.wordpress.org/reference/functions/get_option/#comment-2369"
+                      >
+                        <time datetime="2017-09-17T03:48:44+00:00">
+                          7 years ago
+                        </time>
+                      </a>
+                    </div>
+                    <div
+                      class="user-note-voting"
+                      data-nonce="496a2b4d82"
+                      data-can-vote="false"
+                    >
+                      <a
+                        class="user-note-voting-up"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="2369"
+                        data-vote="up"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-2369"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      ><span class="user-note-voting-count" title="0% like this"
+                        ><span class="screen-reader-text"
+                          >Vote results for this note: </span
+                        >-3</span
+                      ><a
+                        class="user-note-voting-down"
+                        title="You must log in to vote on the helpfulness of this note"
+                        data-id="2369"
+                        data-vote="down"
+                        href="https://login.wordpress.org?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F%23comment-2369"
+                        ><span class="screen-reader-text"
+                          >You must log in to vote on the helpfulness of this
+                          note</span
+                        ></a
+                      >
+                    </div>
+                  </header>
+                  <!-- .comment-metadata -->
+
+                  <div
+                    class="wporg-has-embedded-code comment-content"
+                    id="comment-content-2369"
+                  >
+                    <p>
+                      check options exists or not, use isset to check<br />
+                      if value exists then checked box appear, if there is no
+                      option then unchecked box appears
+                    </p>
+                    <pre
+                      class="wp-block-code"
+                    ><code lang="php" class="language-php line-numbers">$checkbox = get_option('options');
+
+    if ( isset( $checkbox['check_box'] ) ) {
+        echo 'value exists- so return checked box ';
+    } else {
+        echo ' no value  - so return unchecked box ';
+    }</code></pre>
+                  </div>
+                  <!-- .comment-content -->
+
+                  <section
+                    id="feedback-2369"
+                    class="wporg-has-embedded-code feedback hide-if-js"
+                    data-comment-count="0"
+                  ></section>
+                  <!-- .feedback -->
+                </article>
+                <!-- .comment-body -->
+              </li>
+            </ol>
+          </section>
+        </div>
+
+        <section class="wp-block-wporg-code-reference-comment-form">
+          <p>
+            You must
+            <a
+              href="https://login.wordpress.org/?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F"
+              title="https://login.wordpress.org/?redirect_to=https%3A%2F%2Fdeveloper.wordpress.org%2Freference%2Ffunctions%2Fget_option%2F"
+              >log in</a
+            >
+            before being able to contribute a note or feedback.
+          </p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
