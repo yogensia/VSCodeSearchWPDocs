@@ -5,12 +5,12 @@
 **Search WordPress Docs** is an extension that allows you to search functions, classes, methods, or hooks on the official WordPress documentation without having to leave VSCode.
 
 <div align="center">
-  <img src="https://github.com/yogensia/VSCodeSearchWPDocs/raw/master/images/demo.gif" alt="Search WordPress Docs GIF" title="Search WordPress Docs GIF" />
+  <img src="https://github.com/yogensia/VSCodeSearchWPDocs/raw/master/images/demo.avif" alt="Search WordPress Docs Demo" title="Search WordPress Docs Demo" />
 </div>
 
 ## How it Works
 
-**Search WordPress Docs** takes the word at your cursor position, or selected text and matches it against a dictionary of known WordPress functions and hooks. If it recognizes your search term, it opens the according Documentation page https://developer.wordpress.org/, otherwise it opens Google's first result that matches.
+**Search WordPress Docs** takes the word at your cursor position, or selected text and matches it against a dictionary of known WordPress functions and hooks. If it recognizes your search term, it opens the according Documentation page <https://developer.wordpress.org/>, otherwise it opens Google's first result that matches.
 
 Since version 2.0.0, results are shown on a panel to the right of your VSCode editor, and offers a few themes to style the results too. This is optional, and can be disabled from the extension's settings if you prefer to open the results on your browser.
 
@@ -35,11 +35,11 @@ Documentation will appear on a side tab in VSCode. You can use the Table of Cont
 - `searchwpdocs.cssTheme`: Choose between several themes to style the documentation when it is showed in a tab inside VSCode.
 - `searchwpdocs.openResultsInTab`: Enabled by default, it shows the documentation in a tab inside VSCode. If it is disabled, documentation will open in your browser instead.
 - `searchwpdocs.showOnSideTab`: Allows you to specify whether you want documentation to open on a side panel or as a regular tab. You can of course drag and drop the tab after it opens and rearrange it as you like.
-- `searchwpdocs.site`: Change the url to use for the search when the word isn't recognized by the extension. The text you have selected will be appended to the url specified here. With this setting you can choose if you want to search in the [Developer Reference](https://developer.wordpress.org/reference/) site, in the good old [Codex](https://codex.wordpress.org/), or other sites like [QueryPosts](https://queryposts.com/).
+- `searchwpdocs.site`: Change the URL to use for the search when the word isn't recognized by the extension. The text you have selected will be appended to the URL specified here. With this setting you can choose if you want to search in the [Developer Reference](https://developer.wordpress.org/reference/) site, in the good old [Codex](https://codex.wordpress.org/), or other sites like [QueryPosts](https://queryposts.com/).
 
 ## Known Issues
 
-- If a word is not found in the internal dictionary, the extension will rely on Google's "I'm feeling lucky" functionality to show the best guess match, so results might be less accurate in that case. This should rarely happen when searching for functions and hooks.
+- If a word is not found in the internal dictionary, the extension will rely on Google to show the best guess match, so results might be less accurate in that case. This should rarely happen when searching for functions and hooks.
 
 - When showing results in VSCode, only results from the [Developer Reference](https://developer.wordpress.org/reference/) site will be shown. Other documentation sources such as the Codex are not available in this mode.
 
@@ -51,19 +51,7 @@ Planned updates can be found at the [project's Trello board](https://trello.com/
 
 ## Suggestions & Bug Reports
 
-If you find an issue or have any feedback you can let me know by posting on [github](https://github.com/yogensia/VSCodeSearchWPDocs/issues).
-
-## Themes
-
-Search WordPress Docs has a few themes available, used to style the Documentation when viewed in a tab within VSCode.
-
-If you want to help by providing a theme, [check this guide](https://github.com/yogensia/VSCodeSearchWPDocs/blob/master/THEMES-HOW-TO.md), thanks.
-
-### List of Themes
-
-- WordPress Code Reference
-- One Dark
-- Monokai
+If you find an issue or have any feedback you can let me know by posting on [GitHub](https://github.com/yogensia/VSCodeSearchWPDocs/issues).
 
 ## Changelog
 
