@@ -5,7 +5,7 @@
 **Search WordPress Docs** is an extension that allows you to search functions, classes, methods, or hooks on the official WordPress documentation without having to leave VSCode.
 
 <div align="center">
-  <img src="https://github.com/yogensia/VSCodeSearchWPDocs/raw/master/images/demo.avif" alt="Search WordPress Docs Demo" title="Search WordPress Docs Demo" />
+  <img src="https://github.com/yogensia/VSCodeSearchWPDocs/raw/master/assets/demo.avif" alt="Search WordPress Docs Demo" title="Search WordPress Docs Demo" />
 </div>
 
 ## How it Works
@@ -15,7 +15,7 @@
 Since version 2.0.0, results are shown on a panel to the right of your VSCode editor, and offers a few themes to style the results too. This is optional, and can be disabled from the extension's settings if you prefer to open the results on your browser.
 
 <div align="center">
-  <img src="https://github.com/yogensia/VSCodeSearchWPDocs/raw/master/images/screenshot-1.png" alt="Search WordPress Docs screenshot" title="Search WordPress Docs screenshot" />
+  <img src="https://github.com/yogensia/VSCodeSearchWPDocs/raw/master/assets/screenshot.png" alt="Search WordPress Docs screenshot" title="Search WordPress Docs screenshot" />
 </div>
 
 ### To Make a Search
