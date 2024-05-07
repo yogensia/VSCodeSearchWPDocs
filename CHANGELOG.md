@@ -2,6 +2,15 @@
 
 All notable changes for each version of this extension are documented in this file.
 
+## 3.0.0 - 2024-05-07
+
+- Updated extension to work with new WP Docs redesign.
+- Improved URI handling in webviews.
+- Updated WordPress Function and Hook definitions.
+- Refactored and clean up code.
+- Updated styling of documentation webview themes.
+- Updated whole project, dependencies and build scripts.
+
 ## 2.0.2 - 2019-06-28
 
 - Added `wp_widgets_init` and `widgets_init` to list of recognized words.
