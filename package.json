@@ -139,7 +139,7 @@
         "@yutengjing/tsconfig-node": "^0.0.5",
         "esbuild": "^0.20.1",
         "esbuild-visualizer": "^0.6.0",
-        "eslint": "^8.57.0",
+        "eslint": "^9.26.0",
         "glob": "^10.3.10",
         "lint-staged": "^15.2.2",
         "mocha": "^10.3.0",
